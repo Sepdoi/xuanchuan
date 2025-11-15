@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>交易所返佣指南 | 币安 & Bitget 高额返佣</title>
-    <meta name="description" content="通过专属邀请码 BTC588 (币安) 和 BTC18188 (Bitget) 注册，享受币安30%、Bitget高达50%的交易手续费返佣。常见问题解答，联系 Telegram: @sepdoi 获取一对一指导。">
-    <meta name="keywords" content="交易所返佣指南, 币安, Bitget, 返佣, 推广码, 邀请码, BTC588, BTC18188, 加密货币, 交易, 比特币, Telegram, @sepdoi, FAQ">
+    <meta name="description" content="通过专属邀请码 BTC588 (币安) 和 BTC18188 (Bitget) 注册，享受币安30%、Bitget高达50%的合约和现货交易手续费返佣。联系 Telegram: @sepdoi 获取一对一指导。">
+    <meta name="keywords" content="交易所返佣指南, 币安, Bitget, 返佣, 推广码, 邀请码, BTC588, BTC18188, 加密货币, 合约交易, 交易, 比特币, Telegram, @sepdoi, FAQ">
     <style>
         :root {
             --primary-color: #f0b90b; /* Binance Yellow */
@@ -362,9 +362,16 @@
             color: var(--secondary-color);
             text-decoration: none;
             font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
         }
         .contact-link:hover {
             text-decoration: underline;
+        }
+        .contact-link svg {
+            width: 20px;
+            height: 20px;
         }
         /* Back to Top Button */
         #back-to-top {
@@ -453,7 +460,6 @@
     </header>
 
     <main>
-        <!-- ... (All sections from Hero to FAQ remain the same) ... -->
         <section class="hero">
             <h1>最高 50% 交易返佣，从这里开始</h1>
             <p>使用我们的专属推广码注册全球顶尖交易所币安 (Binance) 和 Bitget，即可永久享受高额交易手续费返佣。更安全、更智能地进行交易。</p>
@@ -503,14 +509,15 @@
             </div>
         </section>
 
+        <!-- Fee Comparison Section - UPDATED FOR FUTURES TRADING -->
         <section id="fees" class="section fee-comparison">
             <div class="container">
-                <h2 class="section-title">手续费返佣如何为您省钱？</h2>
+                <h2 class="section-title">合约返佣如何为您节省巨额费用？</h2>
                 <p style="text-align: center; max-width: 800px; margin: -30px auto 40px; color: var(--text-secondary);">
-                    假设您每月交易额为 $100,000，我们来看看通过本站注册能为您节省多少手续费。（以下为估算值，具体费率请参考交易所官网）
+                    合约交易因其高频和杠杆特性，手续费累计速度惊人。假设您是一位活跃的合约交易者，每月交易额达到 **$1,000,000 USDT**，看看返佣能带来多大差异！
                 </p>
                 <div class="comparison-table-wrapper">
-                    <table>
+                    <table class="comparison-table">
                         <thead>
                             <tr>
                                 <th>项目</th>
@@ -520,14 +527,14 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>标准现货费率 (Maker/Taker)</td>
-                                <td>0.1% / 0.1%</td>
-                                <td>0.1% / 0.1%</td>
+                                <td>标准合约费率 (Maker/Taker)</td>
+                                <td>0.02% / 0.04%</td>
+                                <td>0.02% / 0.06%</td>
                             </tr>
                             <tr>
-                                <td>每月预估手续费</td>
-                                <td>$100</td>
-                                <td>$100</td>
+                                <td>每月预估手续费 (按Taker)</td>
+                                <td>$400</td>
+                                <td>$600</td>
                             </tr>
                             <tr>
                                 <td>本站返佣比例</td>
@@ -536,13 +543,13 @@
                             </tr>
                             <tr>
                                 <td>每月可节省</td>
-                                <td class="rebate-fee">$30</td>
-                                <td class="rebate-fee">$50</td>
+                                <td class="rebate-fee">$120</td>
+                                <td class="rebate-fee">$300</td>
                             </tr>
                             <tr>
                                 <td>您的实际手续费</td>
-                                <td><span class="original-fee">$100</span> <span class="rebate-fee">$70</span></td>
-                                <td><span class="original-fee">$100</span> <span class="rebate-fee">$50</span></td>
+                                <td><span class="original-fee">$400</span> <span class="rebate-fee">$280</span></td>
+                                <td><span class="original-fee">$600</span> <span class="rebate-fee">$300</span></td>
                             </tr>
                         </tbody>
                     </table>
@@ -610,7 +617,10 @@
         <div class="container">
             <p>
                 需要帮助或有任何疑问？欢迎联系我们: 
-                <a href="https://t.me/sepdoi" target="_blank" class="contact-link">Telegram @sepdoi</a>
+                <a href="https://t.me/sepdoi" target="_blank" class="contact-link">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9.78 18.65l.28-4.23l7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3L3.64 12c-.88-.25-.89-1.37.2-1.72l16.03-5.71c.75-.27 1.45.16 1.25.93l-2.54 12.08c-.24.94-1.03 1.16-1.75.71l-4.55-3.34l-2.11 2.03c-.22.21-.42.41-.83.41z"></path></svg>
+                    <span>Telegram @sepdoi</span>
+                </a>
             </p>
             <p>免责声明：加密货币投资存在高市场风险 ，请谨慎决策。本网站所有信息不构成任何投资建议。</p>
             <p>&copy; 2025 交易所返佣指南. All Rights Reserved.</p>
