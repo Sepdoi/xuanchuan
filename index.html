@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>币安30%返佣推广码 BTC588 | 最高返佣比例</title>
+  <meta name="description" content="使用币安推广码BTC588，享受30%交易手续费返佣，节省交易成本，提升收益。立即注册开始交易！">
+  <meta name="keywords" content="币安,推广码,BTC588,30%返佣,币安注册,加密货币交易">
+  
+  <!-- 引入外部资源 -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
+  
+  <!-- Tailwind CSS 配置 -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0052FF',    // 币安蓝 - 主色调
+            secondary: '#F0B90B',  // 币安黄 - 辅助色
+            dark: '#1D2129',       // 深色文本
+            light: '#F2F3F5',      // 浅色背景
+            success: '#00B42A',    // 成功色
+          },
+          fontFamily: {
+            inter: ['Inter', 'system-ui', 'sans-serif'],
+          },
+        },
+      }
+    }
+  </script>
+  
+  <!-- 自定义工具类 -->
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .content-auto {
+        content-visibility: auto;
+      }
+      .text-shadow {
+        text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      }
+      .bg-gradient-primary {
+        background: linear-gradient(135deg, #0052FF 0%, #0039CB 100%);
+      }
+      .transition-custom {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+    }
+  </style>
+  
+  <!-- 全局样式 -->
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+    }
+    
+    .hero-bg {
+      background-image: url('https://picsum.photos/id/1/1920/1080');
+      background-size: cover;
+      background-position: center;
+      background-blend-mode: overlay;
+    }
+    
+    .card-hover {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .card-hover:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+    
+    .animate-float {
+      animation: float 3s ease-in-out infinite;
+    }
+    
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+    
+    .countdown-item {
+      position: relative;
+      display: inline-block;
+      width: 60px;
+      height: 60px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 8px;
+      margin: 0 5px;
+      text-align: center;
+      line-height: 60px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    
+    /* 自定义滚动条 */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+      background: #0052FF;
+      border-radius: 4px;
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+      background: #0039CB;
+    }
+  </style>
+</head>
+<body class="bg-light text-dark font-inter">
+  <!-- 导航栏 -->
+  <header id="navbar" class="fixed w-full z-50 transition-all duration-300">
+    <nav class="bg-white/90 backdrop-blur-md shadow-sm py-4 px-6 md:px-10">
+      <div class="container mx-auto flex justify-between items-center">
+        <!-- Logo -->
+        <a href="#" class="flex items-center space-x-2">
+          <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
+            <i class="fa fa-bitcoin text-white text-xl"></i>
+          </div>
+          <span class="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">币安返佣</span>
+        </a>
+        
+        <!-- 桌面端菜单 -->
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="#about" class="text-dark hover:text-primary transition-colors">关于返佣</a>
+          <a href="#benefits" class="text-dark hover:text-primary transition-colors">核心优势</a>
+          <a href="#how-it-works" class="text-dark hover:text-primary transition-colors">使用指南</a>
+          <a href="#faq" class="text-dark hover:text-primary transition-colors">常见问题</a>
+        </div>
+        
+        <!-- 注册按钮 -->
+        <a href="#register" class="hidden md:block bg-primary hover:bg-primary/90 text-white font-medium py-2 px-6 rounded-full shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5">
+          立即注册
+        </a>
+        
+        <!-- 移动端菜单按钮 -->
+        <button id="menu-toggle" class="md:hidden text-dark text-2xl">
+          <i class="fa fa-bars"></i>
+        </button>
+      </div>
+    </nav>
+    
+    <!-- 移动端菜单 -->
+    <div id="mobile-menu" class="md:hidden bg-white shadow-lg absolute w-full left-0 top-full transform -translate-y-full opacity-0 transition-all duration-300 pointer-events-none">
+      <div class="container mx-auto py-4 px-6 flex flex-col space-y-4">
+        <a href="#about" class="text-dark hover:text-primary py-2 transition-colors">关于返佣</a>
+        <a href="#benefits" class="text-dark hover:text-primary py-2 transition-colors">核心优势</a>
+        <a href="#how-it-works" class="text-dark hover:text-primary py-2 transition-colors">使用指南</a>
+        <a href="#faq" class="text-dark hover:text-primary py-2 transition-colors">常见问题</a>
+        <a href="#register" class="bg-primary hover:bg-primary/90 text-white font-medium py-2 px-6 rounded-full text-center shadow-md hover:shadow-lg transition-all">
+          立即注册
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 英雄区 -->
+    <section class="hero-bg bg-primary/90 pt-32 pb-20 px-6 md:px-10">
+      <div class="container mx-auto">
+        <div class="flex flex-col md:flex-row items-center">
+          <div class="md:w-1/2 text-white mb-10 md:mb-0">
+            <h1 class="text-[clamp(2.5rem,5vw,4rem)] font-bold leading-tight mb-6 text-shadow">
+              币安推广码 <span class="text-secondary animate-float">BTC588</span>
+            </h1>
+            <p class="text-[clamp(1.2rem,2vw,1.5rem)] mb-8 opacity-90">
+              享受<span class="text-secondary font-bold">30%</span>交易手续费返佣
+            </p>
+            <p class="text-lg mb-10 max-w-lg">
+              加入全球最大的加密货币交易平台，使用我们的专属推广码BTC588，节省交易成本，提高您的投资收益。
+            </p>
+            
+            <!-- 倒计时 -->
+            <div class="mb-10">
+              <p class="text-lg mb-4">限时优惠倒计时：</p>
+              <div class="flex" id="countdown">
+                <div class="countdown-item" id="days">00</div>
+                <span class="text-2xl mx-1">:</span>
+                <div class="countdown-item" id="hours">00</div>
+                <span class="text-2xl mx-1">:</span>
+                <div class="countdown-item" id="minutes">00</div>
+                <span class="text-2xl mx-1">:</span>
+                <div class="countdown-item" id="seconds">00</div>
+              </div>
+            </div>
+            
+            <!-- CTA按钮组 -->
+            <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+              <a href="#register" class="bg-secondary hover:bg-secondary/90 text-dark font-bold py-3 px-8 rounded-full shadow-xl hover:shadow-2xl transition-all transform hover:-translate-y-0.5 text-center">
+                <i class="fa fa-user-plus mr-2"></i> 立即注册
+              </a>
+              <a href="#how-it-works" class="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white font-medium py-3 px-8 rounded-full shadow-lg hover:shadow-xl transition-all text-center">
+                <i class="fa fa-play-circle mr-2"></i> 了解更多
+              </a>
+            </div>
+          </div>
+          
+          <!-- 右侧图片 -->
+          <div class="md:w-1/2 relative">
+            <div class="relative z-10 animate-float">
+              <img src="https://picsum.photos/id/3/600/400" alt="币安交易平台" class="rounded-2xl shadow-2xl mx-auto">
+              <div class="absolute -bottom-5 -right-5 bg-secondary text-dark font-bold py-2 px-6 rounded-full shadow-lg">
+                30%返佣
+              </div>
+            </div>
+            <!-- 装饰元素 -->
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-primary/30 rounded-full blur-3xl"></div>
+            <div class="absolute top-10 right-10 w-20 h-20 bg-secondary/30 rounded-full blur-xl"></div>
+            <div class="absolute bottom-10 left-10 w-16 h-16 bg-white/20 rounded-full blur-xl"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- 关于返佣 -->
+    <section id="about" class="py-20 px-6 md:px-10 bg-white">
+      <div class="container mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold mb-4">什么是币安返佣？</h2>
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+            币安返佣是一种激励机制，通过使用推广码注册的用户可以获得交易手续费的部分返还，降低交易成本。
+          </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- 返佣说明卡片1 -->
+          <div class="bg-light rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all card-hover">
+            <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+              <i class="fa fa-percent text-primary text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4">30%超高返佣</h3>
+            <p class="text-gray-600">
+              使用推广码BTC588注册，即可享受高达30%的交易手续费返佣，是行业内最高返佣比例之一。
+            </p>
+          </div>
+          
+          <!-- 返佣说明卡片2 -->
+          <div class="bg-light rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all card-hover">
+            <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+              <i class="fa fa-clock-o text-primary text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4">实时返佣</h3>
+            <p class="text-gray-600">
+              返佣实时计算，每日自动发放至您的币安账户，让您的收益一目了然。
+            </p>
+          </div>
+          
+          <!-- 返佣说明卡片3 -->
+          <div class="bg-light rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all card-hover">
+            <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+              <i class="fa fa-line-chart text-primary text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4">长期有效</h3>
+            <p class="text-gray-600">
+              一旦使用BTC588注册，返佣比例将长期有效，持续为您节省交易成本。
+            </p>
+          </div>
+        </div>
+        
+        <!-- 返佣计算示例 -->
+        <div class="mt-20 bg-light rounded-2xl p-8 md:p-12 shadow-lg">
+          <div class="text-center mb-10">
+            <h3 class="text-2xl font-bold mb-4">返佣收益计算示例</h3>
+            <p class="text-gray-600">
+              假设您每月交易10,000 USDT，手续费率为0.1%，使用不同返佣比例的对比：
+            </p>
+          </div>
+          
+          <div class="w-full max-w-3xl mx-auto">
+            <canvas id="rebateChart" height="300"></canvas>
+          </div>
+          
+          <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+            <div class="bg-white p-6 rounded-xl shadow">
+              <p class="text-gray-500 mb-2">标准账户</p>
+              <p class="text-3xl font-bold text-dark">0%</p>
+              <p class="text-gray-600 mt-2">月返佣: 0 USDT</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow">
+              <p class="text-gray-500 mb-2">普通返佣</p>
+              <p class="text-3xl font-bold text-primary">10%</p>
+              <p class="text-gray-600 mt-2">月返佣: 1 USDT</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow border-2 border-secondary">
+              <p class="text-gray-500 mb-2">BTC588返佣</p>
+              <p class="text-3xl font-bold text-secondary">30%</p>
+              <p class="text-gray-600 mt-2">月返佣: 3 USDT</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- 核心优势 -->
+    <section id="benefits" class="py-20 px-6 md:px-10 bg-gradient-to-b from-white to-light">
+      <div class="container mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold mb-4">为什么选择我们的推广码？</h2>
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+            BTC588不仅提供行业最高的30%返佣，还有更多专属优势等待您
+          </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <!-- 左侧图片 -->
+          <div class="relative">
+            <div class="relative z-10">
+              <img src="https://picsum.photos/id/20/600/800" alt="币安交易优势" class="rounded-2xl shadow-xl">
+              <div class="absolute -bottom-6 -left-6 bg-primary text-white font-bold py-3 px-6 rounded-xl shadow-lg transform rotate-3">
+                行业领先
+              </div>
+            </div>
+            <!-- 装饰元素 -->
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-secondary/20 rounded-full blur-3xl"></div>
+          </div>
+          
+          <!-- 右侧优势列表 -->
+          <div>
+            <!-- 优势项1 -->
+            <div class="flex mb-8">
+              <div class="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-6">
+                <i class="fa fa-trophy text-primary text-xl"></i>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold mb-2">最高返佣比例</h3>
+                <p class="text-gray-600">
+                  30%返佣比例是币安官方提供的最高返佣级别，让您的交易成本降至最低。
+                </p>
+              </div>
+            </div>
+            
+            <!-- 优势项2 -->
+            <div class="flex mb-8">
+              <div class="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-6">
+                <i class="fa fa-shield text-primary text-xl"></i>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold mb-2">安全可靠</h3>
+                <p class="text-gray-600">
+                  币安是全球最大的加密货币交易平台，拥有银行级安全保障，保护您的资产安全。
+                </p>
+              </div>
+            </div>
+            
+            <!-- 优势项3 -->
+            <div class="flex mb-8">
+              <div class="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-6">
+                <i class="fa fa-globe text-primary text-xl"></i>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold mb-2">丰富的交易品种</h3>
+                <p class="text-gray-600">
+                  支持数百种加密货币交易对，包括比特币、以太坊等主流币种和各类热门山寨币。
+                </p>
+              </div>
+            </div>
+            
+            <!-- 优势项4 -->
+            <div class="flex">
+              <div class="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-6">
+                <i class="fa fa-bolt text-primary text-xl"></i>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold mb-2">专业的交易体验</h3>
+                <p class="text-gray-600">
+                  提供现货、合约、杠杆等多种交易方式，满足不同用户的交易需求。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- 使用指南 -->
+    <section id="how-it-works" class="py-20 px-6 md:px-10 bg-white">
+      <div class="container mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold mb-4">如何使用推广码BTC588？</h2>
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+            只需简单三步，即可享受30%返佣优惠
+          </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- 步骤1 -->
+          <div class="relative">
+            <div class="bg-light rounded-2xl p-8 shadow-lg h-full card-hover">
+              <div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center mb-6 text-2xl font-bold">
+                1
+              </div>
+              <h3 class="text-xl font-bold mb-4">点击注册按钮</h3>
+              <p class="text-gray-600">
+                点击页面上的"立即注册"按钮，跳转到币安官方注册页面。
+              </p>
+            </div>
+            <!-- 连接线 -->
+            <div class="hidden md:block absolute top-1/2 right-0 transform translate-x-1/2 -translate-y-1/2 w-16 h-1 bg-gray-200"></div>
+          </div>
+          
+          <!-- 步骤2 -->
+          <div class="relative">
+            <div class="bg-light rounded-2xl p-8 shadow-lg h-full card-hover">
+              <div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center mb-6 text-2xl font-bold">
+                2
+              </div>
+              <h3 class="text-xl font-bold mb-4">填写注册信息</h3>
+              <p class="text-gray-600">
+                输入您的邮箱地址，设置密码，并在推广码字段填写BTC588。
+              </p>
+            </div>
+            <!-- 连接线 -->
+            <div class="hidden md:block absolute top-1/2 right-0 transform translate-x-1/2 -translate-y-1/2 w-16 h-1 bg-gray-200"></div>
+          </div>
+          
+          <!-- 步骤3 -->
+          <div>
+            <div class="bg-light rounded-2xl p-8 shadow-lg h-full card-hover">
+              <div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center mb-6 text-2xl font-bold">
+                3
+              </div>
+              <h3 class="text-xl font-bold mb-4">完成注册并交易</h3>
+              <p class="text-gray-600">
+                完成邮箱验证后，即可开始交易，自动享受30%手续费返佣。
+              </p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 注册提示 -->
+        <div class="mt-16 bg-primary/5 rounded-2xl p-8 border border-primary/20">
+          <div class="flex flex-col md:flex-row items-center">
+            <div class="md:w-2/3 mb-6 md:mb-0 md:pr-8">
+              <h3 class="text-2xl font-bold mb-4">重要提示</h3>
+              <p class="text-gray-600 mb-4">
+                请确保在注册过程中正确填写推广码BTC588，注册后将无法更改。如果您已经有币安账户，可以注册一个新账户来享受返佣优惠。
+              </p>
+              <p class="text-gray-600">
+                返佣将自动计算并每日发放至您的币安现货账户，可随时提现或用于交易。
+              </p>
+            </div>
+            <div class="md:w-1/3 flex justify-center md:justify-end">
+              <a href="#register" class="bg-primary hover:bg-primary/90 text-white font-bold py-3 px-8 rounded-full shadow-xl hover:shadow-2xl transition-all transform hover:-translate-y-0.5">
+                <i class="fa fa-user-plus mr-2"></i> 立即注册
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- 常见问题 -->
+    <section id="faq" class="py-20 px-6 md:px-10 bg-light">
+      <div class="container mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold mb-4">常见问题</h2>
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+            以下是关于币安返佣的常见问题解答
+          </p>
+        </div>
+        
+        <div class="max-w-3xl mx-auto">
+          <!-- FAQ项目 -->
+          <div class="mb-6">
+            <button class="faq-toggle w-full flex justify-between items-center bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all text-left">
+              <span class="text-lg font-medium">什么是币安返佣？</span>
+              <i class="fa fa-chevron-down text-primary transition-transform"></i>
+            </button>
+            <div class="faq-content bg-white rounded-b-xl p-6 pt-0 shadow-md hidden">
+              <p class="text-gray-600">
+                币安返佣是币安推出的一项推广计划，用户通过推广码注册后，每笔交易都会获得一定比例的手续费返还。这是一种降低交易成本的有效方式。
+              </p>
+            </div>
+          </div>
+          
+          <div class="mb-6">
+            <button class="faq-toggle w-full flex justify-between items-center bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all text-left">
+              <span class="text-lg font-medium">如何确认我已经成功使用了推广码BTC588？</span>
+              <i class="fa fa-chevron-down text-primary transition-transform"></i>
+            </button>
+            <div class="faq-content bg-white rounded-b-xl p-6 pt-0 shadow-md hidden">
+              <p class="text-gray-600">
+                注册完成后，您可以在币安账户的"返佣"或"推广中心"页面查看您的返佣比例。如果显示为30%，则表示您已成功使用BTC588推广码。
+              </p>
+            </div>
+          </div>
+          
+          <div class="mb-6">
+            <button class="faq-toggle w-full flex justify-between items-center bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all text-left">
+              <span class="text-lg font-medium">返佣会以什么形式发放？</span>
+              <i class="fa fa-chevron-down text-primary transition-transform"></i>
+            </button>
+            <div class="faq-content bg-white rounded-b-xl p-6 pt-0 shadow-md hidden">
+              <p class="text-gray-600">
+                返佣将以USDT的形式每日自动发放至您的币安现货账户。您可以随时将返佣提现或用于交易其他加密货币。
+              </p>
+            </div>
+          </div>
+          
+          <div class="mb-6">
+            <button class="faq-toggle w-full flex justify-between items-center bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all text-left">
+              <span class="text-lg font-medium">返佣比例会变化吗？</span>
+              <i class="fa fa-chevron-down text-primary transition-transform"></i>
+            </button>
+            <div class="faq-content bg-white rounded-b-xl p-6 pt-0 shadow-md hidden">
+              <p class="text-gray-600">
+                不会。一旦您使用BTC588注册，30%的返佣比例将永久有效，不会因为交易量或其他因素而降低。
+              </p>
+            </div>
+          </div>
+          
+          <div class="mb-6">
+            <button class="faq-toggle w-full flex justify-between items-center bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all text-left">
+              <span class="text-lg font-medium">我已经有币安账户了，还能使用BTC588吗？</span>
+              <i class="fa fa-chevron-down text-primary transition-transform"></i>
+            </button>
+            <div class="faq-content bg-white rounded-b-xl p-6 pt-0 shadow-md hidden">
+              <p class="text-gray-600">
+                不可以。推广码只能在注册新账户时使用，已有的币安账户无法添加或更改推广码。您可以注册一个新账户并使用BTC588来享受返佣优惠。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- 注册CTA -->
+    <section id="register" class="py-20 px-6 md:px-10 bg-gradient-primary text-white">
+      <div class="container mx-auto">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold mb-6">立即注册，享受30%返佣！</h2>
+          <p class="text-xl mb-10 opacity-90">
+            使用推广码<span class="text-secondary font-bold text-2xl mx-2">BTC588</span>，开始您的加密货币交易之旅
+          </p>
+          
+          <!-- 注册表单 -->
+          <div class="bg-white/10 backdrop-blur-md rounded-2xl p-8 md:p-10 shadow-2xl">
+            <form class="space-y-6">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label for="first-name" class="block text-sm font-medium mb-2">姓名</label>
+                  <input type="text" id="first-name" class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 focus:outline-none focus:ring-2 focus:ring-secondary text-white placeholder-white/50" placeholder="请输入您的姓名">
+                </div>
+                <div>
+                  <label for="email" class="block text-sm font-medium mb-2">邮箱地址</label>
+                  <input type="email" id="email" class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 focus:outline-none focus:ring-2 focus:ring-secondary text-white placeholder-white/50" placeholder="请输入您的邮箱">
+                </div>
+              </div>
+              
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label for="password" class="block text-sm font-medium mb-2">密码</label>
+                  <input type="password" id="password" class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 focus:outline-none focus:ring-2 focus:ring-secondary text-white placeholder-white/50" placeholder="请设置密码">
+                </div>
+                <div>
+                  <label for="referral-code" class="block text-sm font-medium mb-2">推广码</label>
+                  <input type="text" id="referral-code" value="BTC588" readonly class="w-full px-4 py-3 rounded-lg bg-secondary/20 border border-secondary/30 focus:outline-none focus:ring-2 focus:ring-secondary text-white placeholder-white/50">
+                </div>
+              </div>
+              
+              <div class="flex items-start">
+                <div class="flex items-center h-5">
+                  <input id="terms" type="checkbox" class="w-4 h-4 rounded border-white/30 bg-white/10 focus:ring-secondary">
+                </div>
+                <div class="ml-3 text-sm">
+                  <label for="terms" class="font-medium">
+                    我同意<a href="#" class="text-secondary hover:underline">服务条款</a>和<a href="#" class="text-secondary hover:underline">隐私政策</a>
+                  </label>
+                </div>
+              </div>
+              
+              <button type="submit" class="w-full bg-secondary hover:bg-secondary/90 text-dark font-bold py-3 px-6 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5">
+                创建账户
+              </button>
+              
+              <p class="text-sm text-white/70">
+                点击"创建账户"，即表示您同意我们的服务条款和隐私政策
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <!-- 页脚 -->
+  <footer class="bg-dark text-white py-12 px-6 md:px-10">
+    <div class="container mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+        <!-- 关于我们 -->
+        <div>
+          <h3 class="text-xl font-bold mb-6">关于我们</h3>
+          <p class="text-gray-400 mb-6">
+            我们是币安官方认证的推广伙伴，致力于为用户提供最高比例的返佣服务，帮助用户降低交易成本，提高投资收益。
+          </p>
+          <div class="flex space-x-4">
+            <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors">
+              <i class="fa fa-weixin text-white"></i>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors">
+              <i class="fa fa-telegram text-white"></i>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors">
+              <i class="fa fa-twitter text-white"></i>
+            </a>
+          </div>
+        </div>
+        
+        <!-- 快速链接 -->
+        <div>
+          <h3 class="text-xl font-bold mb-6">快速链接</h3>
+          <ul class="space-y-3">
+            <li><a href="#about" class="text-gray-400 hover:text-white transition-colors">关于返佣</a></li>
+            <li><a href="#benefits" class="text-gray-400 hover:text-white transition-colors">核心优势</a></li>
+            <li><a href="#how-it-works" class="text-gray-400 hover:text-white transition-colors">使用指南</a></li>
+            <li><a href="#faq" class="text-gray-400 hover:text-white transition-colors">常见问题</a></li>
+            <li><a href="#register" class="text-gray-400 hover:text-white transition-colors">立即注册</a></li>
+          </ul>
+        </div>
+        
+        <!-- 联系我们 -->
+        <div>
+          <h3 class="text-xl font-bold mb-6">联系我们</h3>
+          <ul class="space-y-3">
+            <li class="flex items-start">
+              <i class="fa fa-envelope text-primary mt-1 mr-3"></i>
+              <span class="text-gray-400">support@btc588.com</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fa fa-phone text-primary mt-1 mr-3"></i>
+              <span class="text-gray-400">+86 123 4567 8910</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fa fa-map-marker text-primary mt-1 mr-3"></i>
+              <span class="text-gray-400">上海市浦东新区区块链产业园</span>
+            </li>
+          </ul>
+        </div>
+        
+        <!-- 订阅 -->
+        <div>
+          <h3 class="text-xl font-bold mb-6">订阅更新</h3>
+          <p class="text-gray-400 mb-4">
+            订阅我们的电子邮件，获取最新的加密货币资讯和返佣优惠信息。
+          </p>
+          <form class="space-y-3">
+            <input type="email" placeholder="您的邮箱地址" class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 focus:outline-none focus:ring-2 focus:ring-primary text-white placeholder-white/50">
+            <button type="submit" class="w-full bg-primary hover:bg-primary/90 text-white font-medium py-2 px-4 rounded-lg transition-colors">
+              订阅
+            </button>
+          </form>
+        </div>
+      </div>
+      
+      <!-- 版权信息 -->
+      <div class="pt-8 border-t border-white/10 text-center text-gray-500 text-sm">
+        <p>© 2025 币安返佣推广. 保留所有权利.</p>
+        <p class="mt-2">
+          本网站仅为币安推广使用，与币安官方网站无关。加密货币交易存在风险，请谨慎操作。
+        </p>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- 回到顶部按钮 -->
+  <button id="back-to-top" class="fixed bottom-8 right-8 w-12 h-12 bg-primary text-white rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300 z-50">
+    <i class="fa fa-arrow-up"></i>
+  </button>
+  
+  <!-- JavaScript -->
+  <script>
+    // 导航栏滚动效果
+    window.addEventListener('scroll', function() {
+      const navbar = document.getElementById('navbar');
+      const backToTop = document.getElementById('back-to-top');
+      
+      if (window.scrollY > 50) {
+        navbar.classList.add('bg-white/95', 'shadow-md');
+        navbar.classList.remove('bg-transparent');
+        
+        backToTop.classList.remove('opacity-0', 'invisible');
+        backToTop.classList.add('opacity-100', 'visible');
+      } else {
+        navbar.classList.remove('bg-white/95', 'shadow-md');
+        navbar.classList.add('bg-transparent');
+        
+        backToTop.classList.add('opacity-0', 'invisible');
+        backToTop.classList.remove('opacity-100', 'visible');
+      }
+    });
+    
+    // 移动端菜单切换
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    menuToggle.addEventListener('click', function() {
+      if (mobileMenu.classList.contains('opacity-0')) {
+        mobileMenu.classList.remove('opacity-0', '-translate-y-full', 'pointer-events-none');
+        mobileMenu.classList.add('opacity-100', 'translate-y-0', 'pointer-events-auto');
+        menuToggle.innerHTML = '<i class="fa fa-times"></i>';
+      } else {
+        mobileMenu.classList.add('opacity-0', '-translate-y-full', 'pointer-events-none');
+        mobileMenu.classList.remove('opacity-100', 'translate-y-0', 'pointer-events-auto');
+        menuToggle.innerHTML = '<i class="fa fa-bars"></i>';
+      }
+    });
+    
+    // FAQ切换
+    const faqToggles = document.querySelectorAll('.faq-toggle');
+    
+    faqToggles.forEach(toggle => {
+      toggle.addEventListener('click', function() {
+        const content = this.nextElementSibling;
+        const icon = this.querySelector('i');
+        
+        if (content.classList.contains('hidden')) {
+          content.classList.remove('hidden');
+          icon.classList.add('rotate-180');
+        } else {
+          content.classList.add('hidden');
+          icon.classList.remove('rotate-180');
+        }
+      });
+    });
+    
+    // 回到顶部
+    const backToTop = document.getElementById('back-to-top');
+    
+    backToTop.addEventListener('click', function() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+    
+    // 倒计时功能
+    function startCountdown() {
+      // 设置活动结束时间（30天后）
+      const endDate = new Date();
+      endDate.setDate(endDate.getDate() + 30);
+      
+      const countdownInterval = setInterval(function() {
+        const now = new Date();
+        const difference = endDate - now;
+        
+        if (difference <= 0) {
+          clearInterval(countdownInterval);
+          document.getElementById('days').textContent = '00';
+          document.getElementById('hours').textContent = '00';
+          document.getElementById('minutes').textContent = '00';
+          document.getElementById('seconds').textContent = '00';
+          return;
+        }
+        
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+        
+        document.getElementById('days').textContent = days.toString().padStart(2, '0');
+        document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+        document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+        document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+      }, 1000);
+    }
+    
+    // 初始化图表
+    function initChart() {
+      const ctx = document.getElementById('rebateChart').getContext('2d');
+      
+      const chart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['标准账户 (0%)', '普通返佣 (10%)', 'BTC588返佣 (30%)'],
+          datasets: [{
+            label: '月交易手续费 (USDT)',
+            data: [10, 10, 10],
+            backgroundColor: [
+              'rgba(156, 163, 175, 0.5)',
+              'rgba(59, 130, 246, 0.5)',
+              'rgba(240, 185, 11, 0.5)'
+            ],
+            borderColor: [
+              'rgba(156, 163, 175, 1)',
+              'rgba(59, 130, 246, 1)',
+              'rgba(240, 185, 11, 1)'
+            ],
+            borderWidth: 1
+          }, {
+            label: '月返佣收益 (USDT)',
+            data: [0, 1, 3],
+            backgroundColor: [
+              'rgba(156, 163, 175, 0.8)',
+              'rgba(59, 130, 246, 0.8)',
+              'rgba(240, 185, 11, 0.8)'
+            ],
+            borderColor: [
+              'rgba(156, 163, 175, 1)',
+              'rgba(59, 130, 246, 1)',
+              'rgba(240, 185, 11, 1)'
+            ],
+            borderWidth: 1
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: {
+              position: 'top',
+            },
+            title: {
+              display: true,
+              text: '不同返佣比例收益对比'
+            }
+          },
+          scales: {
+            y: {
+              beginAtZero: true,
+              title: {
+                display: true,
+                text: '金额 (USDT)'
+              }
+            }
+          }
+        }
+      });
+    }
+    
+    // 页面加载完成后初始化
+    window.addEventListener('DOMContentLoaded', function() {
+      startCountdown();
+      initChart();
+    });
+  </script>
+</body>
+</html>
