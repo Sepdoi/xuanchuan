@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>加密货币交易返佣 | 币安 & Bitget 高额返佣</title>
-    <meta name="description" content="通过专属邀请码 BTC588 (币安) 和 BTC18188 (Bitget) 注册，享受币安30%、Bitget高达50%的交易手续费返佣。全球顶尖交易所，安全可靠，立即开启您的智能交易之旅。">
-    <meta name="keywords" content="币安, Bitget, 返佣, 推广码, 邀请码, BTC588, BTC18188, 加密货币, 交易, 比特币">
+    <title>交易所返佣指南 | 币安 & Bitget 高额返佣</title>
+    <meta name="description" content="通过专属邀请码 BTC588 (币安) 和 BTC18188 (Bitget) 注册，享受币安30%、Bitget高达50%的交易手续费返佣。常见问题解答，联系 Telegram: @sepdoi 获取一对一指导。">
+    <meta name="keywords" content="交易所返佣指南, 币安, Bitget, 返佣, 推广码, 邀请码, BTC588, BTC18188, 加密货币, 交易, 比特币, Telegram, @sepdoi, FAQ">
     <style>
         :root {
             --primary-color: #f0b90b; /* Binance Yellow */
@@ -17,13 +17,15 @@
             --card-border: #2c2c2c;
             --success-color: #28a745;
         }
+        html {
+            scroll-behavior: smooth;
+        }
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             margin: 0;
             background-color: var(--dark-bg);
             color: var(--text-color);
             line-height: 1.6;
-            scroll-behavior: smooth;
         }
         .container {
             max-width: 1100px;
@@ -51,15 +53,33 @@
             color: var(--primary-color);
             text-decoration: none;
         }
-        nav a {
+        /* Navigation */
+        .main-nav {
+            display: flex;
+        }
+        .main-nav a {
             color: var(--text-color);
             text-decoration: none;
             margin-left: 25px;
             font-weight: 500;
             transition: color 0.3s;
         }
-        nav a:hover {
+        .main-nav a:hover {
             color: var(--primary-color);
+        }
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            gap: 5px;
+        }
+        .hamburger .bar {
+            width: 25px;
+            height: 3px;
+            background-color: var(--text-color);
+            border-radius: 5px;
+            transition: all 0.3s ease-in-out;
         }
         /* Hero Section */
         .hero {
@@ -97,8 +117,8 @@
             transform: translateY(-3px);
             box-shadow: 0 8px 15px rgba(240, 185, 11, 0.2);
         }
-        /* Platforms Section */
-        .platforms {
+        /* General Section Styling */
+        .section {
             padding: 80px 0;
         }
         .section-title {
@@ -107,6 +127,7 @@
             margin-bottom: 50px;
             font-weight: 600;
         }
+        /* Platforms Section */
         .platform-grid {
             display: flex;
             gap: 30px;
@@ -148,13 +169,38 @@
             background: var(--dark-bg);
             padding: 10px 15px;
             border-radius: 6px;
-            margin: 15px 0;
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 1.2rem;
+            margin: 20px 0;
             border: 1px dashed var(--card-border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .referral-code-box span {
+            font-size: 1.2rem;
         }
         .referral-code-box strong {
             color: var(--success-color);
+        }
+        .copy-btn {
+            background: var(--secondary-color);
+            color: #fff;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background-color 0.3s;
+        }
+        .copy-btn:hover {
+            background: #3395ff;
+        }
+        .binance-card .copy-btn {
+            background: var(--primary-color);
+            color: #000;
+        }
+        .binance-card .copy-btn:hover {
+            background: #ffcf40;
         }
         .platform-card ul {
             list-style: none;
@@ -189,11 +235,48 @@
         .bitget-card ul li::before {
             color: var(--secondary-color);
         }
-        /* Tutorial Section */
-        .tutorial {
-            padding: 80px 0;
+        /* Fee Comparison Section */
+        .fee-comparison {
             background: var(--light-bg);
         }
+        .comparison-table-wrapper {
+            overflow-x: auto;
+        }
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+            min-width: 600px;
+        }
+        .comparison-table th, .comparison-table td {
+            border: 1px solid var(--card-border);
+            padding: 15px;
+            text-align: center;
+        }
+        .comparison-table th {
+            background-color: var(--dark-bg);
+            font-size: 1.1rem;
+        }
+        .comparison-table td {
+            background-color: var(--light-bg);
+        }
+        .comparison-table thead th:first-child {
+            text-align: left;
+        }
+        .comparison-table tbody td:first-child {
+            text-align: left;
+            font-weight: bold;
+        }
+        .original-fee {
+            text-decoration: line-through;
+            color: var(--text-secondary);
+            margin-right: 10px;
+        }
+        .rebate-fee {
+            color: var(--success-color);
+            font-weight: bold;
+        }
+        /* Tutorial Section */
         .tutorial-steps {
             display: flex;
             justify-content: space-around;
@@ -225,6 +308,46 @@
             font-size: 1.4rem;
             margin-bottom: 10px;
         }
+        /* FAQ Section */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .faq-item {
+            background: var(--light-bg);
+            margin-bottom: 10px;
+            border-radius: 8px;
+            border: 1px solid var(--card-border);
+            overflow: hidden;
+        }
+        .faq-question {
+            padding: 20px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-question::after {
+            content: '+';
+            font-size: 1.8rem;
+            transition: transform 0.3s ease;
+        }
+        .faq-item.active .faq-question::after {
+            transform: rotate(45deg);
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+        .faq-answer p {
+            padding: 0 20px 20px;
+            margin: 0;
+        }
         /* Footer */
         footer {
             text-align: center;
@@ -232,17 +355,81 @@
             border-top: 1px solid var(--card-border);
         }
         footer p {
-            margin: 5px 0;
+            margin: 10px 0;
             color: var(--text-secondary);
+        }
+        .contact-link {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .contact-link:hover {
+            text-decoration: underline;
+        }
+        /* Back to Top Button */
+        #back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: none;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            color: #000;
+            border: none;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 24px;
+            line-height: 50px;
+            cursor: pointer;
+            z-index: 999;
+            opacity: 0;
+            transition: opacity 0.3s, transform 0.3s;
+            transform: translateY(10px);
+        }
+        #back-to-top.show {
+            display: block;
+            opacity: 0.8;
+            transform: translateY(0);
+        }
+        #back-to-top:hover {
+            opacity: 1;
         }
         /* Responsive */
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.5rem; }
             .section-title { font-size: 2.2rem; }
             .platform-grid { flex-direction: column; align-items: center; }
-            header .container { flex-direction: column; gap: 10px; }
-            nav { margin-top: 10px; }
-            nav a { margin: 0 10px; }
+            
+            .main-nav {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 75px; /* header height */
+                left: 0;
+                width: 100%;
+                background: var(--light-bg);
+                padding: 1rem 0;
+            }
+            .main-nav.active {
+                display: flex;
+            }
+            .main-nav a {
+                margin: 10px 20px;
+                text-align: center;
+            }
+            .hamburger {
+                display: flex;
+            }
+            .hamburger.active .bar:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+            .hamburger.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+            .hamburger.active .bar:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
         }
     </style>
 </head>
@@ -250,31 +437,42 @@
 
     <header>
         <div class="container">
-            <a href="#" class="logo">CryptoRebates</a>
-            <nav>
+            <a href="#" class="logo">交易所返佣指南</a>
+            <nav class="main-nav" id="main-nav">
                 <a href="#platforms">平台返佣</a>
+                <a href="#fees">费用对比</a>
                 <a href="#tutorial">注册教程</a>
+                <a href="#faq">常见问题</a>
             </nav>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
         </div>
     </header>
 
     <main>
+        <!-- ... (All sections from Hero to FAQ remain the same) ... -->
         <section class="hero">
             <h1>最高 50% 交易返佣，从这里开始</h1>
             <p>使用我们的专属推广码注册全球顶尖交易所币安 (Binance) 和 Bitget，即可永久享受高额交易手续费返佣。更安全、更智能地进行交易。</p>
             <a href="#platforms" class="cta-button">选择平台，立即注册</a>
         </section>
 
-        <section id="platforms" class="platforms">
+        <section id="platforms" class="section">
             <div class="container">
                 <h2 class="section-title">选择您的交易平台</h2>
                 <div class="platform-grid">
                     <!-- Binance Card -->
-                    <div class="platform-card">
+                    <div class="platform-card binance-card">
                         <h2 class="binance-title">币安 Binance</h2>
                         <p class="rebate-highlight">30% 返佣</p>
                         <p class="rebate-description">全球交易量第一，生态最全的龙头交易所</p>
-                        <div class="referral-code-box">推广码: <strong>BTC588</strong></div>
+                        <div class="referral-code-box">
+                            <span>推广码: <strong id="binance-code">BTC588</strong></span>
+                            <button class="copy-btn" onclick="copyCode('binance-code', this)">复制</button>
+                        </div>
                         <ul>
                             <li>全球最大交易所，拥有无与伦比的流动性。</li>
                             <li>币种最全，支持数百种加密货币的交易。</li>
@@ -289,9 +487,12 @@
                         <h2 class="bitget-title">Bitget</h2>
                         <p class="rebate-highlight">50% 返佣</p>
                         <p class="rebate-description">全球领先的跟单交易所，新手友好</p>
-                        <div class="referral-code-box">推广码: <strong>BTC18188</strong></div>
+                        <div class="referral-code-box">
+                            <span>推广码: <strong id="bitget-code">BTC18188</strong></span>
+                            <button class="copy-btn" onclick="copyCode('bitget-code', this)">复制</button>
+                        </div>
                         <ul>
-                            <li>独创跟单交易，一键复制全球顶尖交易员策略。 [16]</li>
+                            <li>独创跟单交易，一键复制全球顶尖交易员策略。</li>
                             <li>设有3亿美元保护基金，运营至今0安全事故。</li>
                             <li>产品矩阵丰富，支持现货、合约及网格策略交易。</li>
                             <li>全球超2000万用户信赖的可靠平台。</li>
@@ -302,14 +503,61 @@
             </div>
         </section>
 
-        <section id="tutorial" class="tutorial">
+        <section id="fees" class="section fee-comparison">
+            <div class="container">
+                <h2 class="section-title">手续费返佣如何为您省钱？</h2>
+                <p style="text-align: center; max-width: 800px; margin: -30px auto 40px; color: var(--text-secondary);">
+                    假设您每月交易额为 $100,000，我们来看看通过本站注册能为您节省多少手续费。（以下为估算值，具体费率请参考交易所官网）
+                </p>
+                <div class="comparison-table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>项目</th>
+                                <th>币安 (Binance)</th>
+                                <th>Bitget</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>标准现货费率 (Maker/Taker)</td>
+                                <td>0.1% / 0.1%</td>
+                                <td>0.1% / 0.1%</td>
+                            </tr>
+                            <tr>
+                                <td>每月预估手续费</td>
+                                <td>$100</td>
+                                <td>$100</td>
+                            </tr>
+                            <tr>
+                                <td>本站返佣比例</td>
+                                <td><strong>30%</strong></td>
+                                <td><strong>50%</strong></td>
+                            </tr>
+                            <tr>
+                                <td>每月可节省</td>
+                                <td class="rebate-fee">$30</td>
+                                <td class="rebate-fee">$50</td>
+                            </tr>
+                            <tr>
+                                <td>您的实际手续费</td>
+                                <td><span class="original-fee">$100</span> <span class="rebate-fee">$70</span></td>
+                                <td><span class="original-fee">$100</span> <span class="rebate-fee">$50</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section id="tutorial" class="section">
             <div class="container">
                 <h2 class="section-title">三步轻松入门</h2>
                 <div class="tutorial-steps">
                     <div class="step">
                         <div class="step-number">1</div>
                         <h3>点击链接注册</h3>
-                        <p>点击上方任一平台的“注册”按钮，推广码将自动填入，您只需用邮箱或手机号完成注册。</p>
+                        <p>点击上方任一平台的“注册”按钮，推广码将自动填入。您也可以手动复制推广码进行注册。</p>
                     </div>
                     <div class="step">
                         <div class="step-number">2</div>
@@ -324,14 +572,126 @@
                 </div>
             </div>
         </section>
+
+        <section id="faq" class="section">
+            <div class="container">
+                <h2 class="section-title">常见问题解答 (FAQ)</h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">返佣是永久的吗？</div>
+                        <div class="faq-answer">
+                            <p>是的，通过本站提供的专属链接或推广码注册，您所获得的交易手续费返佣是永久有效的。只要您的账户持续产生交易，返佣就会持续进行。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">返佣多久结算一次？如何查看？</div>
+                        <div class="faq-answer">
+                            <p>不同平台的结算周期不同。通常，币安的返佣是实时或按小时结算，而Bitget是按日结算。您可以在交易所的“返佣管理”或“推荐好友”相关页面查看到详细的返佣记录和到账情况。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">我已经是币安/Bitget用户了，还能享受返佣吗？</div>
+                        <div class="faq-answer">
+                            <p>非常抱歉，返佣政策通常只适用于通过特定推广链接注册的新用户。如果您已经拥有账户，将无法绑定新的推荐关系。建议您可以使用家人的信息重新注册一个新账户，以享受返佣福利。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">返佣的比例是固定的吗？</div>
+                        <div class="faq-answer">
+                            <p>本站提供的币安30%和Bitget 50%是我们作为渠道能给出的最高返佣比例，这个比例对于通过我们注册的用户是固定的。请注意，这是从您支付的全部手续费中返还的比例，而不是直接减免。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>
         <div class="container">
-            <p>免责声明：加密货币投资存在高市场风险，请谨慎决策。本网站所有信息不构成任何投资建议。</p>
-            <p>&copy; 2025 CryptoRebates. All Rights Reserved.</p>
+            <p>
+                需要帮助或有任何疑问？欢迎联系我们: 
+                <a href="https://t.me/sepdoi" target="_blank" class="contact-link">Telegram @sepdoi</a>
+            </p>
+            <p>免责声明：加密货币投资存在高市场风险 ，请谨慎决策。本网站所有信息不构成任何投资建议。</p>
+            <p>&copy; 2025 交易所返佣指南. All Rights Reserved.</p>
         </div>
     </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" title="返回顶部">&#8679;</button>
+
+    <script>
+        // 复制推广码功能
+        function copyCode(elementId, button) {
+            const codeElement = document.getElementById(elementId);
+            const code = codeElement.innerText;
+            
+            navigator.clipboard.writeText(code).then(() => {
+                const originalText = button.innerText;
+                button.innerText = '已复制!';
+                button.style.backgroundColor = 'var(--success-color)';
+                
+                setTimeout(() => {
+                    button.innerText = originalText;
+                    const card = button.closest('.platform-card');
+                    if (card.classList.contains('binance-card')) {
+                         button.style.backgroundColor = 'var(--primary-color)';
+                    } else {
+                         button.style.backgroundColor = 'var(--secondary-color)';
+                    }
+                }, 2000);
+            }).catch(err => {
+                console.error('无法复制: ', err);
+                alert('复制失败，请手动复制。');
+            });
+        }
+
+        // FAQ 折叠功能
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                const answer = item.querySelector('.faq-answer');
+                const isActive = item.classList.contains('active');
+
+                if (isActive) {
+                    item.classList.remove('active');
+                    answer.style.maxHeight = null;
+                } else {
+                    item.classList.add('active');
+                    answer.style.maxHeight = answer.scrollHeight + "px";
+                }
+            });
+        });
+
+        // 汉堡菜单功能
+        const hamburger = document.getElementById('hamburger');
+        const mainNav = document.getElementById('main-nav');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            mainNav.classList.toggle('active');
+        });
+        // 点击菜单链接后自动关闭菜单
+        mainNav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                mainNav.classList.remove('active');
+            });
+        });
+
+        // 返回顶部按钮功能
+        const backToTopButton = document.getElementById('back-to-top');
+        window.onscroll = function() {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        };
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
 
 </body>
 </html>
