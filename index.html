@@ -3,705 +3,553 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>交易所返佣指南 | 币安 & Bitget 高额返佣</title>
-    <meta name="description" content="通过专属邀请码 BTC588 (币安) 和 BTC18188 (Bitget) 注册，享受币安30%、Bitget高达50%的合约和现货交易手续费返佣。联系 Telegram: @sepdoi 获取一对一指导。">
-    <meta name="keywords" content="交易所返佣指南, 币安, Bitget, 返佣, 推广码, 邀请码, BTC588, BTC18188, 加密货币, 合约交易, 交易, 比特币, Telegram, @sepdoi, FAQ">
+    <title>交易所返佣推荐 - Crypto Rebate Pro</title>
+    <!-- 引入 Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 引入 React CDN -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <!-- 引入 Babel CDN，用于在浏览器中转换 JSX -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
     <style>
-        :root {
-            --primary-color: #f0b90b; /* Binance Yellow */
-            --secondary-color: #007bff; /* Bitget Blue */
-            --dark-bg: #121212;
-            --light-bg: #1e1e1e;
-            --text-color: #e0e0e0;
-            --text-secondary: #a0a0a0;
-            --card-border: #2c2c2c;
-            --success-color: #28a745;
-        }
-        html {
-            scroll-behavior: smooth;
-        }
+        /* 确保 Inter 字体可用 */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            margin: 0;
-            background-color: var(--dark-bg);
-            color: var(--text-color);
-            line-height: 1.6;
-        }
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        /* Header */
-        header {
-            background: rgba(30, 30, 30, 0.85);
-            backdrop-filter: blur(10px);
-            padding: 1rem 0;
-            border-bottom: 1px solid var(--card-border);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--primary-color);
-            text-decoration: none;
-        }
-        /* Navigation */
-        .main-nav {
-            display: flex;
-        }
-        .main-nav a {
-            color: var(--text-color);
-            text-decoration: none;
-            margin-left: 25px;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        .main-nav a:hover {
-            color: var(--primary-color);
-        }
-        /* Hamburger Menu */
-        .hamburger {
-            display: none;
-            cursor: pointer;
-            flex-direction: column;
-            gap: 5px;
-        }
-        .hamburger .bar {
-            width: 25px;
-            height: 3px;
-            background-color: var(--text-color);
-            border-radius: 5px;
-            transition: all 0.3s ease-in-out;
-        }
-        /* Hero Section */
-        .hero {
-            text-align: center;
-            padding: 100px 20px;
-            background: linear-gradient(rgba(18, 18, 18, 0.8), rgba(18, 18, 18, 0.9)), url('https://images.unsplash.com/photo-1639322537228-f710d846310a?q=80&w=1932&auto=format&fit=crop' ) no-repeat center center/cover;
-        }
-        .hero h1 {
-            font-size: 3.2rem;
-            margin-bottom: 1rem;
-            color: #fff;
-            font-weight: 700;
-        }
-        .hero p {
-            font-size: 1.25rem;
-            color: var(--text-secondary);
-            max-width: 650px;
-            margin: 0 auto 2.5rem auto;
-        }
-        .cta-button {
-            display: inline-block;
-            background-color: var(--primary-color);
-            color: #000;
-            padding: 15px 35px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-        }
-        .cta-button:hover {
-            background-color: #ffcf40;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 15px rgba(240, 185, 11, 0.2);
-        }
-        /* General Section Styling */
-        .section {
-            padding: 80px 0;
-        }
-        .section-title {
-            text-align: center;
-            font-size: 2.8rem;
-            margin-bottom: 50px;
-            font-weight: 600;
-        }
-        /* Platforms Section */
-        .platform-grid {
-            display: flex;
-            gap: 30px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        .platform-card {
-            background: var(--light-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 12px;
-            padding: 35px;
-            width: 100%;
-            max-width: 480px;
-            text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s;
-            display: flex;
-            flex-direction: column;
-        }
-        .platform-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 25px rgba(0,0,0,0.25);
-        }
-        .platform-card h2 {
-            font-size: 2.2rem;
-            margin-bottom: 15px;
-        }
-        .binance-title { color: var(--primary-color); }
-        .bitget-title { color: var(--secondary-color); }
-        .rebate-highlight {
-            font-size: 3rem;
-            font-weight: bold;
-            margin: 15px 0;
-        }
-        .rebate-description {
-            color: var(--text-secondary);
-            margin-bottom: 25px;
-        }
-        .referral-code-box {
-            background: var(--dark-bg);
-            padding: 10px 15px;
-            border-radius: 6px;
-            margin: 20px 0;
-            border: 1px dashed var(--card-border);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-family: 'Courier New', Courier, monospace;
-        }
-        .referral-code-box span {
-            font-size: 1.2rem;
-        }
-        .referral-code-box strong {
-            color: var(--success-color);
-        }
-        .copy-btn {
-            background: var(--secondary-color);
-            color: #fff;
-            border: none;
-            padding: 8px 12px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            transition: background-color 0.3s;
-        }
-        .copy-btn:hover {
-            background: #3395ff;
-        }
-        .binance-card .copy-btn {
-            background: var(--primary-color);
-            color: #000;
-        }
-        .binance-card .copy-btn:hover {
-            background: #ffcf40;
-        }
-        .platform-card ul {
-            list-style: none;
-            padding: 0;
-            text-align: left;
-            margin: 20px 0;
-            flex-grow: 1;
-        }
-        .platform-card ul li {
-            margin-bottom: 12px;
-            display: flex;
-            align-items: flex-start;
-        }
-        .platform-card ul li::before {
-            content: '✓';
-            color: var(--primary-color);
-            margin-right: 12px;
-            font-weight: bold;
-            font-size: 1.1rem;
-        }
-        .platform-card .cta-button {
-            margin-top: auto;
-        }
-        .bitget-card .cta-button {
-            background-color: var(--secondary-color);
-            color: #fff;
-        }
-        .bitget-card .cta-button:hover {
-            background-color: #3395ff;
-            box-shadow: 0 8px 15px rgba(0, 123, 255, 0.2);
-        }
-        .bitget-card ul li::before {
-            color: var(--secondary-color);
-        }
-        /* Fee Comparison Section */
-        .fee-comparison {
-            background: var(--light-bg);
-        }
-        .comparison-table-wrapper {
-            overflow-x: auto;
-        }
-        .comparison-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 30px;
-            min-width: 600px;
-        }
-        .comparison-table th, .comparison-table td {
-            border: 1px solid var(--card-border);
-            padding: 15px;
-            text-align: center;
-        }
-        .comparison-table th {
-            background-color: var(--dark-bg);
-            font-size: 1.1rem;
-        }
-        .comparison-table td {
-            background-color: var(--light-bg);
-        }
-        .comparison-table thead th:first-child {
-            text-align: left;
-        }
-        .comparison-table tbody td:first-child {
-            text-align: left;
-            font-weight: bold;
-        }
-        .original-fee {
-            text-decoration: line-through;
-            color: var(--text-secondary);
-            margin-right: 10px;
-        }
-        .rebate-fee {
-            color: var(--success-color);
-            font-weight: bold;
-        }
-        /* Tutorial Section */
-        .tutorial-steps {
-            display: flex;
-            justify-content: space-around;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
-        .step {
-            text-align: center;
-            max-width: 300px;
-        }
-        .step-number {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: var(--primary-color);
-            border: 3px solid var(--primary-color);
-            border-radius: 50%;
-            width: 70px;
-            height: 70px;
-            line-height: 70px;
-            margin: 0 auto 20px auto;
-            transition: all 0.3s ease;
-        }
-        .step:hover .step-number {
-            background-color: var(--primary-color);
-            color: var(--dark-bg);
-            transform: scale(1.1);
-        }
-        .step h3 {
-            font-size: 1.4rem;
-            margin-bottom: 10px;
-        }
-        /* FAQ Section */
-        .faq-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .faq-item {
-            background: var(--light-bg);
-            margin-bottom: 10px;
-            border-radius: 8px;
-            border: 1px solid var(--card-border);
-            overflow: hidden;
-        }
-        .faq-question {
-            padding: 20px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .faq-question::after {
-            content: '+';
-            font-size: 1.8rem;
-            transition: transform 0.3s ease;
-        }
-        .faq-item.active .faq-question::after {
-            transform: rotate(45deg);
-        }
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease, padding 0.4s ease;
-            color: var(--text-secondary);
-            line-height: 1.7;
-        }
-        .faq-answer p {
-            padding: 0 20px 20px;
-            margin: 0;
-        }
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 40px 20px;
-            border-top: 1px solid var(--card-border);
-        }
-        footer p {
-            margin: 10px 0;
-            color: var(--text-secondary);
-        }
-        .contact-link {
-            color: var(--secondary-color);
-            text-decoration: none;
-            font-weight: 500;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .contact-link:hover {
-            text-decoration: underline;
-        }
-        .contact-link svg {
-            width: 20px;
-            height: 20px;
-        }
-        /* Back to Top Button */
-        #back-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            display: none;
-            width: 50px;
-            height: 50px;
-            background-color: var(--primary-color);
-            color: #000;
-            border: none;
-            border-radius: 50%;
-            text-align: center;
-            font-size: 24px;
-            line-height: 50px;
-            cursor: pointer;
-            z-index: 999;
+            font-family: 'Inter', sans-serif;
+        }
+        /* 确保动画效果流畅 */
+        .animate-fade-in-up {
+            animation: fadeInUp 0.5s ease-out forwards;
             opacity: 0;
-            transition: opacity 0.3s, transform 0.3s;
-            transform: translateY(10px);
         }
-        #back-to-top.show {
-            display: block;
-            opacity: 0.8;
-            transform: translateY(0);
-        }
-        #back-to-top:hover {
-            opacity: 1;
-        }
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
-            .section-title { font-size: 2.2rem; }
-            .platform-grid { flex-direction: column; align-items: center; }
-            
-            .main-nav {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 75px; /* header height */
-                left: 0;
-                width: 100%;
-                background: var(--light-bg);
-                padding: 1rem 0;
-            }
-            .main-nav.active {
-                display: flex;
-            }
-            .main-nav a {
-                margin: 10px 20px;
-                text-align: center;
-            }
-            .hamburger {
-                display: flex;
-            }
-            .hamburger.active .bar:nth-child(1) {
-                transform: translateY(8px) rotate(45deg);
-            }
-            .hamburger.active .bar:nth-child(2) {
+        @keyframes fadeInUp {
+            from {
                 opacity: 0;
+                transform: translateY(20px);
             }
-            .hamburger.active .bar:nth-child(3) {
-                transform: translateY(-8px) rotate(-45deg);
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
         }
     </style>
 </head>
-<body>
+<body class="bg-[#050505] min-h-screen">
+    <div id="root">
+        <!-- React App will be rendered here -->
+    </div>
 
-    <header>
-        <div class="container">
-            <a href="#" class="logo">交易所返佣指南</a>
-            <nav class="main-nav" id="main-nav">
-                <a href="#platforms">平台返佣</a>
-                <a href="#fees">费用对比</a>
-                <a href="#tutorial">注册教程</a>
-                <a href="#faq">常见问题</a>
-            </nav>
-            <div class="hamburger" id="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </div>
-    </header>
+    <!-- 核心 React/JSX 代码块 -->
+    <script type="text/babel">
+        const { useState, useEffect } = React;
 
-    <main>
-        <section class="hero">
-            <h1>最高 50% 交易返佣，从这里开始</h1>
-            <p>使用我们的专属推广码注册全球顶尖交易所币安 (Binance) 和 Bitget，即可永久享受高额交易手续费返佣。更安全、更智能地进行交易。</p>
-            <a href="#platforms" class="cta-button">选择平台，立即注册</a>
-        </section>
+        // --- 重新定义 Lucide Icons (Inline SVGs) ---
+        const Icon = ({ path, size = 20, className = "" }) => (
+            <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+                <path d={path} />
+            </svg>
+        );
 
-        <section id="platforms" class="section">
-            <div class="container">
-                <h2 class="section-title">选择您的交易平台</h2>
-                <div class="platform-grid">
-                    <!-- Binance Card -->
-                    <div class="platform-card binance-card">
-                        <h2 class="binance-title">币安 Binance</h2>
-                        <p class="rebate-highlight">30% 返佣</p>
-                        <p class="rebate-description">全球交易量第一，生态最全的龙头交易所</p>
-                        <div class="referral-code-box">
-                            <span>推广码: <strong id="binance-code">BTC588</strong></span>
-                            <button class="copy-btn" onclick="copyCode('binance-code', this)">复制</button>
-                        </div>
-                        <ul>
-                            <li>全球最大交易所，拥有无与伦比的流动性。</li>
-                            <li>币种最全，支持数百种加密货币的交易。</li>
-                            <li>生态系统完善，提供理财、NFT、Launchpad等一站式服务。</li>
-                            <li>顶级安全防护，设有SAFU基金保障您的资产安全。</li>
-                        </ul>
-                        <a href="https://www.binance.com/zh-CN/register?ref=BTC588" target="_blank" class="cta-button">注册币安 (自动填写推广码 )</a>
-                    </div>
+        const Copy = (props) => <Icon {...props} path="M15 5h2c2.2 0 4 1.8 4 4v10c0 2.2-1.8 4-4 4H7c-2.2 0-4-1.8-4-4V9c0-2.2 1.8-4 4-4h2" />;
+        const Check = (props) => <Icon {...props} path="M20 6 9 17l-5-5" />;
+        const TrendingUp = (props) => <Icon {...props} path="m18 10 3-3L2 2" d="m18 10 3-3L2 2M15 14l-3 3l-4-4l-3 3" />; // Simplified for this case
+        const Shield = (props) => <Icon {...props} path="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />;
+        const Globe = (props) => <Icon {...props} path="M12 22c5.5 0 10-4.5 10-10S17.5 2 12 2 2 6.5 2 12s4.5 10 10 10z" d="M12 22c5.5 0 10-4.5 10-10S17.5 2 12 2 2 6.5 2 12s4.5 10 10 10zM2 12h20" d="M12 22c5.5 0 10-4.5 10-10S17.5 2 12 2 2 6.5 2 12s4.5 10 10 10zM2 12h20M12 2a15.3 15.3 0 0110 10" d="M12 22c5.5 0 10-4.5 10-10S17.5 2 12 2 2 6.5 2 12s4.5 10 10 10zM2 12h20M12 2a15.3 15.3 0 0110 10" d="M12 22c5.5 0 10-4.5 10-10S17.5 2 12 2 2 6.5 2 12s4.5 10 10 10zM2 12h20M12 2a15.3 15.3 0 0110 10" d="M12 22c5.5 0 10-4.5 10-10S17.5 2 12 2 2 6.5 2 12s4.5 10 10 10zM2 12h20M12 2a15.3 15.3 0 0110 10" d="M12 22c5.5 0 10-4.5 10-10S17.5 2 12 2 2 6.5 2 12s4.5 10 10 10zM2 12h20M12 2a15.3 15.3 0 0110 10" />
+        const Zap = (props) => <Icon {...props} path="M18.4 13.7a2.7 2.7 0 100-5.4h-1.6l-2.4-4.8c-.3-.6-.9-1-1.6-1H8.8c-.7 0-1.3.4-1.6 1L4.8 8.3H3.2a2.7 2.7 0 100 5.4h1.6l2.4 4.8c.3.6.9 1 1.6 1h4.8c.7 0 1.3-.4 1.6-1l2.4-4.8h1.6z" />;
+        const Percent = (props) => <Icon {...props} path="M19 5L5 19" d="M19 5L5 19M18 5.5a3 3 0 11-6 0 3 3 0 016 0z" d="M19 5L5 19M18 5.5a3 3 0 11-6 0 3 3 0 016 0zM12 18.5a3 3 0 11-6 0 3 3 0 016 0z" />;
+        const MessageCircle = (props) => <Icon {...props} path="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" />;
+        const ArrowRight = (props) => <Icon {...props} path="M5 12h14" d="M5 12h14M12 5l7 7-7 7" />;
+        const BarChart3 = (props) => <Icon {...props} path="M3 3v18h18" d="M18 17V9M13 17V5M8 17v-3" />;
+        const Calculator = (props) => <Icon {...props} path="M20 2H4a2 2 0 00-2 2v16a2 2 0 002 2h16a2 2 0 002-2V4a2 2 0 00-2-2z" d="M12 10h.01M16 10h.01M8 10h.01M16 14h.01M12 14h.01M8 14h.01M16 18h.01M12 18h.01M8 18h.01" />;
+        const XIcon = ({ className }) => (
+            <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+            </svg>
+        );
+        const WechatIcon = ({ className }) => (
+            <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
+                <path d="M8.6 15.6c-.2 0-.4 0-.6.1-.2.4-.4.8-.4 1.2 0 1.9 1.9 3.5 4.3 3.5 2.4 0 4.3-1.6 4.3-3.5 0-1.9-1.9-3.5-4.3-3.5-.7 0-1.4.1-2 .4.2-.4.4-.8.5-1.3 2.1-.3 3.8-1.9 3.8-3.9 0-2.2-2.1-4-4.7-4S4.8 6.5 4.8 8.7c0 1.2.6 2.3 1.6 3-.1.4-.3 1-.6 1.6.8.2 1.9.1 2.5-.3.2.1.4.1.7.1 2.9 0 5.3-2 5.3-4.4 0-2.4-2.4-4.4-5.3-4.4S3.7 6.3 3.7 8.7c0 2 1.6 3.7 3.9 4.2-.1.5-.2.8-.2.9s-1 .3-1.6.4c1.1 1.7 3.3 2.6 5.5 2.1.6 1.1 1.9 1.9 3.5 1.9 2.1 0 3.8-1.6 3.8-3.5 0-1.9-1.7-3.5-3.8-3.5-.6 0-1.2.2-1.7.5-.1-.4-.2-.8-.4-1.1z" />
+            </svg>
+        );
 
-                    <!-- Bitget Card -->
-                    <div class="platform-card bitget-card">
-                        <h2 class="bitget-title">Bitget</h2>
-                        <p class="rebate-highlight">50% 返佣</p>
-                        <p class="rebate-description">全球领先的跟单交易所，新手友好</p>
-                        <div class="referral-code-box">
-                            <span>推广码: <strong id="bitget-code">BTC18188</strong></span>
-                            <button class="copy-btn" onclick="copyCode('bitget-code', this)">复制</button>
-                        </div>
-                        <ul>
-                            <li>独创跟单交易，一键复制全球顶尖交易员策略。</li>
-                            <li>设有3亿美元保护基金，运营至今0安全事故。</li>
-                            <li>产品矩阵丰富，支持现货、合约及网格策略交易。</li>
-                            <li>全球超2000万用户信赖的可靠平台。</li>
-                        </ul>
-                        <a href="https://www.bitget.com/zh-CN/register?channel=BTC18188&languageType=0" target="_blank" class="cta-button">注册Bitget (自动填写推广码 )</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Fee Comparison Section - UPDATED FOR FUTURES TRADING -->
-        <section id="fees" class="section fee-comparison">
-            <div class="container">
-                <h2 class="section-title">合约返佣如何为您节省巨额费用？</h2>
-                <p style="text-align: center; max-width: 800px; margin: -30px auto 40px; color: var(--text-secondary);">
-                    合约交易因其高频和杠杆特性，手续费累计速度惊人。假设您是一位活跃的合约交易者，每月交易额达到 **$1,000,000 USDT**，看看返佣能带来多大差异！
-                </p>
-                <div class="comparison-table-wrapper">
-                    <table class="comparison-table">
-                        <thead>
-                            <tr>
-                                <th>项目</th>
-                                <th>币安 (Binance)</th>
-                                <th>Bitget</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>标准合约费率 (Maker/Taker)</td>
-                                <td>0.02% / 0.04%</td>
-                                <td>0.02% / 0.06%</td>
-                            </tr>
-                            <tr>
-                                <td>每月预估手续费 (按Taker)</td>
-                                <td>$400</td>
-                                <td>$600</td>
-                            </tr>
-                            <tr>
-                                <td>本站返佣比例</td>
-                                <td><strong>30%</strong></td>
-                                <td><strong>50%</strong></td>
-                            </tr>
-                            <tr>
-                                <td>每月可节省</td>
-                                <td class="rebate-fee">$120</td>
-                                <td class="rebate-fee">$300</td>
-                            </tr>
-                            <tr>
-                                <td>您的实际手续费</td>
-                                <td><span class="original-fee">$400</span> <span class="rebate-fee">$280</span></td>
-                                <td><span class="original-fee">$600</span> <span class="rebate-fee">$300</span></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
-
-        <section id="tutorial" class="section">
-            <div class="container">
-                <h2 class="section-title">三步轻松入门</h2>
-                <div class="tutorial-steps">
-                    <div class="step">
-                        <div class="step-number">1</div>
-                        <h3>点击链接注册</h3>
-                        <p>点击上方任一平台的“注册”按钮，推广码将自动填入。您也可以手动复制推广码进行注册。</p>
-                    </div>
-                    <div class="step">
-                        <div class="step-number">2</div>
-                        <h3>完成身份认证 (KYC)</h3>
-                        <p>根据平台引导，上传您的身份证明文件以完成认证，这是保障账户安全和解锁全部功能的关键一步。</p>
-                    </div>
-                    <div class="step">
-                        <div class="step-number">3</div>
-                        <h3>开始交易 & 赚取返佣</h3>
-                        <p>完成入金后即可开始交易。通过我们的链接注册，您的每笔交易都将自动计算并返还手续费。</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="faq" class="section">
-            <div class="container">
-                <h2 class="section-title">常见问题解答 (FAQ)</h2>
-                <div class="faq-container">
-                    <div class="faq-item">
-                        <div class="faq-question">返佣是永久的吗？</div>
-                        <div class="faq-answer">
-                            <p>是的，通过本站提供的专属链接或推广码注册，您所获得的交易手续费返佣是永久有效的。只要您的账户持续产生交易，返佣就会持续进行。</p>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question">返佣多久结算一次？如何查看？</div>
-                        <div class="faq-answer">
-                            <p>不同平台的结算周期不同。通常，币安的返佣是实时或按小时结算，而Bitget是按日结算。您可以在交易所的“返佣管理”或“推荐好友”相关页面查看到详细的返佣记录和到账情况。</p>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question">我已经是币安/Bitget用户了，还能享受返佣吗？</div>
-                        <div class="faq-answer">
-                            <p>非常抱歉，返佣政策通常只适用于通过特定推广链接注册的新用户。如果您已经拥有账户，将无法绑定新的推荐关系。建议您可以使用家人的信息重新注册一个新账户，以享受返佣福利。</p>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question">返佣的比例是固定的吗？</div>
-                        <div class="faq-answer">
-                            <p>本站提供的币安30%和Bitget 50%是我们作为渠道能给出的最高返佣比例，这个比例对于通过我们注册的用户是固定的。请注意，这是从您支付的全部手续费中返还的比例，而不是直接减免。</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>
-                需要帮助或有任何疑问？欢迎联系我们: 
-                <a href="https://t.me/sepdoi" target="_blank" class="contact-link">
-                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9.78 18.65l.28-4.23l7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3L3.64 12c-.88-.25-.89-1.37.2-1.72l16.03-5.71c.75-.27 1.45.16 1.25.93l-2.54 12.08c-.24.94-1.03 1.16-1.75.71l-4.55-3.34l-2.11 2.03c-.22.21-.42.41-.83.41z"></path></svg>
-                    <span>Telegram @sepdoi</span>
-                </a>
-            </p>
-            <p>免责声明：加密货币投资存在高市场风险 ，请谨慎决策。本网站所有信息不构成任何投资建议。</p>
-            <p>&copy; 2025 交易所返佣指南. All Rights Reserved.</p>
-        </div>
-    </footer>
-
-    <!-- Back to Top Button -->
-    <button id="back-to-top" title="返回顶部">&#8679;</button>
-
-    <script>
-        // 复制推广码功能
-        function copyCode(elementId, button) {
-            const codeElement = document.getElementById(elementId);
-            const code = codeElement.innerText;
-            
-            navigator.clipboard.writeText(code).then(() => {
-                const originalText = button.innerText;
-                button.innerText = '已复制!';
-                button.style.backgroundColor = 'var(--success-color)';
-                
-                setTimeout(() => {
-                    button.innerText = originalText;
-                    const card = button.closest('.platform-card');
-                    if (card.classList.contains('binance-card')) {
-                         button.style.backgroundColor = 'var(--primary-color)';
-                    } else {
-                         button.style.backgroundColor = 'var(--secondary-color)';
-                    }
-                }, 2000);
-            }).catch(err => {
-                console.error('无法复制: ', err);
-                alert('复制失败，请手动复制。');
-            });
-        }
-
-        // FAQ 折叠功能
-        const faqItems = document.querySelectorAll('.faq-item');
-        faqItems.forEach(item => {
-            const question = item.querySelector('.faq-question');
-            question.addEventListener('click', () => {
-                const answer = item.querySelector('.faq-answer');
-                const isActive = item.classList.contains('active');
-
-                if (isActive) {
-                    item.classList.remove('active');
-                    answer.style.maxHeight = null;
-                } else {
-                    item.classList.add('active');
-                    answer.style.maxHeight = answer.scrollHeight + "px";
-                }
-            });
-        });
-
-        // 汉堡菜单功能
-        const hamburger = document.getElementById('hamburger');
-        const mainNav = document.getElementById('main-nav');
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            mainNav.classList.toggle('active');
-        });
-        // 点击菜单链接后自动关闭菜单
-        mainNav.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                mainNav.classList.remove('active');
-            });
-        });
-
-        // 返回顶部按钮功能
-        const backToTopButton = document.getElementById('back-to-top');
-        window.onscroll = function() {
-            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-                backToTopButton.classList.add('show');
-            } else {
-                backToTopButton.classList.remove('show');
-            }
+        // --- 数据配置 ---
+        const contactInfo = {
+            telegram: 'sepdoi',
+            x: 'sepdoi',
+            wechat: '待定'
         };
-        backToTopButton.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-    </script>
 
+        const exchanges = [
+            {
+                id: 'gate', name: 'Gate.io', displayName: '芝麻开门', tag: '返佣之王', rebate: '80%',
+                code: 'PPPPTTTT', color: 'from-[#00d4ff] to-[#0052ff]', bgHover: 'hover:shadow-[#0052ff]/40',
+                border: 'border-[#00d4ff]/30', icon: <Zap className="w-6 h-6 text-white" />,
+                features: ['全网最高返佣比例', '老牌安全交易所', '币种最丰富'],
+                link: 'https://www.gate.io/signup/PPPPTTTT', popular: true
+            },
+            {
+                id: 'bitget', name: 'Bitget', displayName: 'Bitget', tag: '合约首选', rebate: '50%',
+                code: 'BTC18188', color: 'from-[#00f2ea] to-[#00c6fb]', bgHover: 'hover:shadow-[#00c6fb]/40',
+                border: 'border-[#00f2ea]/30', icon: <TrendingUp className="w-6 h-6 text-white" />,
+                features: ['跟单系统成熟', '合约深度好', '无插针'],
+                link: 'https://www.bitget.com/express/BTC18188', popular: false
+            },
+            {
+                id: 'binance', name: 'Binance', displayName: '币安', tag: '全球第一', rebate: '30%',
+                code: 'BTC588', color: 'from-[#f3ba2f] to-[#fcd535]', bgHover: 'hover:shadow-[#f3ba2f]/40',
+                border: 'border-[#f3ba2f]/30', icon: <Globe className="w-6 h-6 text-white" />,
+                features: ['流动性全球第一', '出入金方便', 'P2P市场活跃'],
+                link: 'https://accounts.binance.com/register?ref=BTC588', popular: false
+            }
+        ];
+
+        const feeComparison = [
+            { name: 'Gate.io', standard: '0.05%', discounted: '0.01%', save: '80%', highlight: true },
+            { name: 'Bitget', standard: '0.06%', discounted: '0.03%', save: '50%', highlight: false },
+            { name: 'Binance', standard: '0.04%', discounted: '0.028%', save: '30%', highlight: false },
+            { name: '普通账户', standard: '0.05-0.1%', discounted: '无优惠', save: '0%', highlight: false, isBad: true }
+        ];
+
+        // --- 组件 ---
+
+        // 优化的通用复制按钮组件
+        const CopyTrigger = ({ text, className, iconSize = 16 }) => {
+          const [copied, setCopied] = useState(false);
+
+          const handleCopy = async (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+
+            const fallbackCopy = (textToCopy) => {
+              const textArea = document.createElement("textarea");
+              textArea.value = textToCopy;
+              textArea.style.position = "fixed";
+              textArea.style.left = "-9999px";
+              textArea.style.top = "0";
+              document.body.appendChild(textArea);
+              textArea.focus();
+              textArea.select();
+              
+              try {
+                const successful = document.execCommand('copy');
+                if (successful) {
+                    setCopied(true);
+                    setTimeout(() => setCopied(false), 2000);
+                }
+              } catch (err) {
+                console.error('Fallback copy failed', err);
+              }
+              
+              document.body.removeChild(textArea);
+            };
+            
+            if (navigator.clipboard && window.isSecureContext) {
+                try {
+                    await navigator.clipboard.writeText(text);
+                    setCopied(true);
+                    setTimeout(() => setCopied(false), 2000);
+                } catch (err) {
+                    fallbackCopy(text);
+                }
+            } else {
+                fallbackCopy(text);
+            }
+          };
+
+          return (
+            <button
+              onClick={handleCopy}
+              className={`flex items-center justify-center transition-all duration-200 active:scale-90 z-20 ${className} ${
+                copied ? 'text-green-400 bg-green-400/10' : 'hover:text-white hover:bg-white/10'
+              }`}
+              title="点击复制"
+            >
+              {copied ? <Check size={iconSize} /> : <Copy size={iconSize} />}
+            </button>
+          );
+        };
+
+        const ExchangeCard = ({ data }) => {
+          return (
+            <div className={`relative flex flex-col h-full bg-[#1a1b26]/60 backdrop-blur-xl rounded-3xl border ${data.border} transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl ${data.bgHover} group overflow-hidden`}>
+              {/* 热门标签 */}
+              {data.popular && (
+                <div className="absolute top-0 right-0 z-10">
+                  <div className="bg-gradient-to-l from-red-500 to-pink-600 text-white text-xs font-bold px-3 py-1 rounded-bl-xl shadow-lg">
+                    热门推荐
+                  </div>
+                </div>
+              )}
+              
+              {/* 顶部渐变条 */}
+              <div className={`h-1.5 w-full bg-gradient-to-r ${data.color}`} />
+
+              <div className="p-6 md:p-8 flex-1 flex flex-col">
+                {/* 头部信息 */}
+                <div className="flex items-start justify-between mb-6">
+                  <div className="flex items-center space-x-4">
+                    <div className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${data.color} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                      {data.icon}
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold text-white tracking-tight">{data.name}</h3>
+                      <div className="flex items-center gap-2 mt-1">
+                        <span className="text-gray-400 text-sm">{data.displayName}</span>
+                        <span className={`text-[10px] px-2 py-0.5 rounded-full border border-white/10 text-white/70 bg-white/5`}>
+                          {data.tag}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* 返佣展示 */}
+                <div className="mb-6 p-4 rounded-2xl bg-gradient-to-r from-gray-800/50 to-gray-900/50 border border-white/5 relative overflow-hidden">
+                    <div className={`absolute top-0 left-0 w-1 h-full bg-gradient-to-b ${data.color}`} />
+                    <div className="flex justify-between items-end">
+                        <div>
+                            <p className="text-gray-400 text-xs mb-1">终身返佣比例</p>
+                            <p className={`text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r ${data.color}`}>
+                                {data.rebate}
+                            </p>
+                        </div>
+                        <div className="text-right">
+                            <p className="text-gray-500 text-xs mb-1">最高等级</p>
+                            <div className="flex space-x-1">
+                                {[1,2,3,4,5].map(i => <div key={i} className={`w-1.5 h-4 rounded-full bg-gradient-to-t ${data.color} opacity-${i*20}`} />)}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* 邀请码 */}
+                <div className="bg-black/30 rounded-xl p-4 border border-white/5 mb-6 group-hover:border-white/10 transition-colors">
+                  <p className="text-xs text-gray-500 mb-2 flex items-center">
+                    <Shield size={12} className="mr-1 text-green-400" /> 官方认证邀请码
+                  </p>
+                  <div className="flex items-center justify-between gap-2">
+                    <span className="font-mono text-xl font-bold text-white tracking-wider truncate">{data.code}</span>
+                    <CopyTrigger 
+                      text={data.code} 
+                      className="px-3 py-1.5 rounded-lg text-xs bg-gray-700/50 text-white border border-transparent hover:border-white/20 shrink-0"
+                    />
+                  </div>
+                </div>
+
+                {/* 特性列表 */}
+                <ul className="space-y-3 mb-8 flex-1">
+                  {data.features.map((feature, idx) => (
+                    <li key={idx} className="flex items-center text-sm text-gray-300">
+                      <Check size={14} className={`mr-2 text-transparent bg-clip-text bg-gradient-to-r ${data.color} min-w-[14px]`} />
+                      <span className="text-white/80">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                {/* 注册按钮 */}
+                <a 
+                  href={data.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`group/btn relative w-full py-4 rounded-xl font-bold text-white text-center overflow-hidden transition-all shadow-lg hover:shadow-xl`}
+                >
+                  <div className={`absolute inset-0 bg-gradient-to-r ${data.color} opacity-90 transition-opacity group-hover/btn:opacity-100`} />
+                  <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20" />
+                  <span className="relative flex items-center justify-center gap-2">
+                    立即注册领返佣
+                    <ArrowRight size={18} className="group-hover/btn:translate-x-1 transition-transform" />
+                  </span>
+                </a>
+              </div>
+            </div>
+          );
+        };
+
+        // 优化的联系方式栏，支持一键复制
+        const ContactBar = ({ className = "" }) => (
+          <div className={`flex flex-wrap items-center justify-center gap-4 md:gap-6 ${className}`}>
+            {/* Telegram */}
+            <a 
+              href={`https://t.me/${contactInfo.telegram}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative flex items-center gap-3 pl-6 pr-12 py-3 rounded-full bg-[#2AABEE] text-white hover:bg-[#229ED9] transition-all hover:scale-105 active:scale-95 shadow-[0_0_15px_rgba(42,171,238,0.4)] group overflow-hidden"
+            >
+              <MessageCircle size={20} className="animate-bounce" />
+              <span className="font-bold text-lg">@{contactInfo.telegram}</span>
+              
+              {/* 独立的复制按钮区域 - 绝对定位在右侧 */}
+              <div className="absolute right-1 top-1 bottom-1 w-10 flex items-center justify-center border-l border-white/20 bg-[#2AABEE] group-hover:bg-[#229ED9]">
+                <CopyTrigger 
+                    text={contactInfo.telegram} 
+                    className="w-8 h-8 rounded-full hover:bg-black/10" 
+                    iconSize={16}
+                />
+              </div>
+            </a>
+
+            {/* X / Twitter */}
+            <a 
+              href={`https://x.com/${contactInfo.x}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative flex items-center gap-3 pl-6 pr-12 py-3 rounded-full bg-black border border-gray-700 text-white hover:border-white transition-all hover:scale-105 active:scale-95 shadow-lg group overflow-hidden"
+            >
+              <XIcon className="w-5 h-5" />
+              <span className="font-bold text-lg">@{contactInfo.x}</span>
+              
+              {/* 独立的复制按钮区域 */}
+              <div className="absolute right-1 top-1 bottom-1 w-10 flex items-center justify-center border-l border-gray-700 group-hover:border-white/20 bg-black">
+                <CopyTrigger 
+                    text={contactInfo.x} 
+                    className="w-8 h-8 rounded-full hover:bg-white/20" 
+                    iconSize={16}
+                />
+              </div>
+            </a>
+
+            {/* WeChat - 支持复制 */}
+            <div className="relative flex items-center gap-3 pl-6 pr-12 py-3 rounded-full bg-[#07C160]/10 border border-[#07C160]/30 text-[#07C160] group cursor-default hover:bg-[#07C160]/20 transition-colors">
+              <WechatIcon className="w-5 h-5" />
+              <span className="font-bold text-lg">
+                {contactInfo.wechat === '待定' ? '微信待定' : contactInfo.wechat}
+              </span>
+              
+              {/* 独立的复制按钮区域 */}
+              <div className="absolute right-1 top-1 bottom-1 w-10 flex items-center justify-center border-l border-[#07C160]/20">
+                <CopyTrigger 
+                    text={contactInfo.wechat} 
+                    className="w-8 h-8 rounded-full hover:bg-[#07C160]/20" 
+                    iconSize={16}
+                />
+              </div>
+            </div>
+          </div>
+        );
+
+        const FeeTable = () => (
+          <div className="w-full overflow-hidden rounded-3xl border border-gray-800 bg-[#0f1115]/80 backdrop-blur-md shadow-2xl">
+            <div className="p-6 border-b border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4">
+              <div className="flex items-center gap-3">
+                <div className="p-2 bg-indigo-500/10 rounded-lg">
+                  <Calculator className="text-indigo-400 w-6 h-6" />
+                </div>
+                <div>
+                    <h3 className="text-xl font-bold text-white">合约手续费节省对比</h3>
+                    <p className="text-sm text-gray-400">基于 100,000 USDT 交易量估算</p>
+                </div>
+              </div>
+              <div className="text-xs px-3 py-1 bg-gray-800 rounded-full text-gray-400 border border-gray-700">
+                数据仅供参考，以官方实时费率为准
+              </div>
+            </div>
+            
+            <div className="overflow-x-auto">
+              <table className="w-full text-left border-collapse">
+                <thead>
+                  <tr className="border-b border-gray-800 text-gray-400 text-sm">
+                    <th className="p-4 pl-6 font-medium">交易所</th>
+                    <th className="p-4 font-medium hidden sm:table-cell">普通用户费率</th>
+                    <th className="p-4 font-medium">邀请码用户费率</th>
+                    <th className="p-4 font-medium text-right pr-6">每十万U节省</th>
+                  </tr>
+                </thead>
+                <tbody className="text-sm">
+                  {feeComparison.map((item, idx) => (
+                    <tr key={idx} className={`border-b border-gray-800/50 last:border-0 hover:bg-white/5 transition-colors ${item.isBad ? 'opacity-50 grayscale' : ''}`}>
+                      <td className="p-4 pl-6 font-bold text-white flex items-center gap-2">
+                        {item.highlight && <Zap size={14} className="text-yellow-400 fill-yellow-400" />}
+                        {item.name}
+                      </td>
+                      <td className="p-4 text-gray-400 hidden sm:table-cell">{item.standard}</td>
+                      <td className={`p-4 font-mono font-medium ${item.isBad ? 'text-gray-500' : 'text-green-400'}`}>
+                        {item.discounted}
+                      </td>
+                      <td className="p-4 pr-6 text-right">
+                        <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
+                          item.isBad 
+                            ? 'bg-gray-800 text-gray-400' 
+                            : 'bg-green-900/30 text-green-400 border border-green-500/20'
+                        }`}>
+                          {item.save === '0%' ? '无' : `省 ${item.save}`}
+                        </span>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        );
+
+        const Background = () => (
+          <div className="fixed inset-0 -z-10 bg-[#050505]">
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-indigo-900/20 via-[#050505] to-[#050505]" />
+            {/* 动态光斑 */}
+            <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-blue-600/10 blur-[120px] animate-pulse" />
+            <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-purple-600/10 blur-[120px] animate-pulse delay-700" />
+            <div className="absolute top-[40%] left-[50%] w-[30%] h-[30%] rounded-full bg-emerald-600/5 blur-[100px] animate-pulse delay-1000" />
+            {/* 网格线 */}
+            <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.03]" />
+            <div 
+              className="absolute inset-0 opacity-[0.05]" 
+              style={{
+                backgroundImage: 'linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px)',
+                backgroundSize: '50px 50px'
+              }}
+            />
+          </div>
+        );
+
+        const App = () => {
+          return (
+            <div className="min-h-screen text-gray-100 font-sans selection:bg-indigo-500/30 selection:text-white pb-20">
+              <Background />
+              
+              {/* Navbar */}
+              <nav className="fixed top-0 w-full z-50 border-b border-white/5 bg-[#050505]/80 backdrop-blur-xl supports-[backdrop-filter]:bg-[#050505]/60">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <div className="w-8 h-8 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center">
+                      <Percent size={20} className="text-white" />
+                    </div>
+                    {/* 网站名称 */}
+                    <span className="text-xl font-bold tracking-tight text-white">交易所返佣<span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">推荐</span></span>
+                  </div>
+                  <a href="#contact" className="hidden sm:block text-sm font-medium text-gray-300 hover:text-white transition-colors">联系客服</a>
+                </div>
+              </nav>
+
+              <main className="pt-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+                
+                {/* Hero Section */}
+                <div className="text-center mb-16 relative">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-medium mb-8 animate-fade-in-up">
+                    <span className="relative flex h-2 w-2">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
+                    </span>
+                    2025年最新高返佣渠道
+                  </div>
+                  
+                  <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-8">
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-gray-500">拒绝高额手续费</span>
+                    <br />
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">开启 80% 返佣交易</span>
+                  </h1>
+                  
+                  <p className="text-xl text-gray-400 max-w-2xl mx-auto mb-12 leading-relaxed">
+                    为您精选 Gate.io, Bitget, 币安等顶级交易所独家 VIP 渠道。
+                    <span className="text-white font-medium">注册即自动生效</span>，永久享受手续费减免。
+                  </p>
+
+                  {/* 🔥 超级醒目的联系方式区域 🔥 */}
+                  <div className="mb-12 animate-fade-in-up delay-100 max-w-3xl mx-auto">
+                     <div className="relative group rounded-3xl p-[2px] bg-gradient-to-r from-yellow-500 via-orange-500 to-yellow-500 shadow-[0_0_40px_rgba(234,179,8,0.2)]">
+                        <div className="absolute -top-6 left-1/2 -translate-x-1/2 bg-[#050505] px-4 z-20">
+                             {/* 金色发光字体 */}
+                             <p className="whitespace-nowrap text-xl md:text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#FFD700] via-[#FFA500] to-[#FFD700] drop-shadow-[0_2px_10px_rgba(255,215,0,0.5)] flex items-center gap-2">
+                                <Zap size={24} className="text-yellow-400 fill-yellow-400 animate-pulse" />
+                                官方联系方式 · 一对一协助
+                                <Zap size={24} className="text-yellow-400 fill-yellow-400 animate-pulse" />
+                             </p>
+                        </div>
+                        
+                        <div className="bg-[#0a0a0c] rounded-[22px] p-8 md:p-10 pt-10 relative">
+                            <ContactBar />
+                        </div>
+                     </div>
+                  </div>
+
+                  <div className="flex flex-col sm:flex-row justify-center gap-4">
+                     <a href="#list" className="px-8 py-3.5 rounded-xl bg-white text-black font-bold hover:bg-gray-200 transition-colors shadow-lg shadow-white/10 flex items-center justify-center">
+                       查看返佣列表
+                       <ArrowRight size={18} className="ml-2" />
+                     </a>
+                     <a href="#compare" className="px-8 py-3.5 rounded-xl bg-gray-800 text-white font-medium border border-gray-700 hover:bg-gray-700 transition-colors flex items-center justify-center">
+                       <BarChart3 size={18} className="mr-2" />
+                       手续费对比
+                     </a>
+                  </div>
+                </div>
+
+                {/* 交易所卡片列表 */}
+                <div id="list" className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mb-24">
+                  {exchanges.map((exchange) => (
+                    <ExchangeCard key={exchange.id} data={exchange} />
+                  ))}
+                </div>
+
+                {/* 手续费对比 & 优势 */}
+                <div id="compare" className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-24">
+                  <div className="lg:col-span-2">
+                     <FeeTable />
+                  </div>
+                  
+                  {/* 侧边信息栏 */}
+                  <div className="flex flex-col gap-6">
+                    <div className="p-6 rounded-3xl bg-gradient-to-br from-indigo-900/20 to-purple-900/20 border border-indigo-500/20 relative overflow-hidden">
+                        <div className="absolute top-0 right-0 p-4 opacity-10">
+                            <Shield size={100} />
+                        </div>
+                        <h3 className="text-xl font-bold text-white mb-2">为什么一定要走返佣？</h3>
+                        <p className="text-gray-400 text-sm leading-relaxed mb-4">
+                            对于合约高频交易者，手续费往往超过本金。普通账户没有任何优惠，长期交易损失巨大。
+                        </p>
+                        <div className="text-3xl font-bold text-white mb-1">Save $5000+</div>
+                        <p className="text-xs text-indigo-300">活跃交易者平均每年节省金额</p>
+                    </div>
+
+                    <div className="p-6 rounded-3xl bg-[#0f1115] border border-gray-800 flex-1 flex flex-col justify-center">
+                        <div className="flex items-center gap-4 mb-4">
+                            <div className="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center text-green-500">
+                                <Check size={20} />
+                            </div>
+                            <div className="text-sm font-medium text-gray-300">自动返现</div>
+                        </div>
+                        <div className="flex items-center gap-4 mb-4">
+                            <div className="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-500">
+                                <Check size={20} />
+                            </div>
+                            <div className="text-sm font-medium text-gray-300">每日/每小时结算</div>
+                        </div>
+                        <div className="flex items-center gap-4">
+                            <div className="w-10 h-10 rounded-full bg-orange-500/20 flex items-center justify-center text-orange-500">
+                                <Check size={20} />
+                            </div>
+                            <div className="text-sm font-medium text-gray-300">官方后台可查</div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* 底部联系方式区域 (备用) */}
+                <div id="contact" className="relative p-1 rounded-3xl bg-gradient-to-r from-gray-800 to-gray-900 mb-10 opacity-80 hover:opacity-100 transition-opacity">
+                    <div className="relative rounded-[22px] bg-[#08090c] p-8 text-center overflow-hidden">
+                        <h2 className="text-2xl font-bold text-white mb-6">还有疑问？</h2>
+                        <ContactBar />
+                    </div>
+                </div>
+
+              </main>
+
+              {/* Footer */}
+              <footer className="max-w-7xl mx-auto px-4 text-center text-gray-600 text-sm py-8 border-t border-gray-900">
+                <p className="mb-2">© 2025 交易所返佣推荐. All rights reserved.</p>
+                <p className="text-xs">
+                    风险提示：加密货币交易具有极高风险，返佣比例以交易所官方实时政策为准。
+                </p>
+              </footer>
+            </div>
+          );
+        };
+
+        // 渲染组件
+        const container = document.getElementById('root');
+        if (container) {
+            ReactDOM.createRoot(container).render(<App />);
+        }
+    </script>
 </body>
 </html>
