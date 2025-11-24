@@ -3,7 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>交易所返佣推荐 - Crypto Rebate Pro</title>
+    <!-- Favicon: 使用 Unicode Emoji 作为图标 -->
+    <!-- 钻石图标 (💎) 象征财富和资产 -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💎</text></svg>">
+    
+    <!-- SEO Title: 包含核心关键词 -->
+    <title>交易所返佣推荐 | 80%手续费返现 | 顶级加密货币交易所 VIP 渠道</title>
+    
+    <!-- SEO Meta Description: 关键卖点摘要 -->
+    <meta name="description" content="寻找最高加密货币交易所返佣？我们提供 Gate.io、Bitget、币安等平台独家 VIP 渠道，终身享受 80% 手续费返现，每日自动结算。高频交易者必备。">
+    <meta name="keywords" content="交易所返佣,加密货币手续费返现,Gateio返佣,Bitget返佣,币安VIP,合约交易">
+
+    <!-- Geo / Language Meta Tags -->
+    <!-- 针对中国大陆用户和全球中文用户，使用 zh-CN -->
+    <link rel="alternate" href="[您的网站URL]" hreflang="zh-CN" />
+    
+    <!-- Open Graph Tags (for Social Media Sharing) -->
+    <meta property="og:title" content="交易所返佣推荐 | 80%手续费返现 VIP 渠道" />
+    <meta property="og:description" content="为您精选顶级交易所最高返佣渠道，拒绝高额手续费，开启 80% 返佣交易！" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="[您的网站URL]" />
+    <!-- 建议此处添加一张有吸引力的 Logo 或宣传图 URL -->
+    <meta property="og:image" content="https://placehold.co/1200x630/000/fff?text=Crypto+Rebate" />
+
     <!-- 引入 Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- 引入 React CDN -->
@@ -53,15 +75,18 @@
 
         const Copy = (props) => <Icon {...props} path="M15 5h2c2.2 0 4 1.8 4 4v10c0 2.2-1.8 4-4 4H7c-2.2 0-4-1.8-4-4V9c0-2.2 1.8-4 4-4h2" />;
         const Check = (props) => <Icon {...props} path="M20 6 9 17l-5-5" />;
-        const TrendingUp = (props) => <Icon {...props} path="m18 10 3-3L2 2" d="m18 10 3-3L2 2M15 14l-3 3l-4-4l-3 3" />; // Simplified for this case
+        const TrendingUp = (props) => <Icon {...props} path="m18 10 3-3L2 2" d="m18 10 3-3L2 2M15 14l-3 3l-4-4l-3 3" />;
         const Shield = (props) => <Icon {...props} path="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />;
-        const Globe = (props) => <Icon {...props} path="M12 22c5.5 0 10-4.5 10-10S17.5 2 12 2 2 6.5 2 12s4.5 10 10 10z" d="M12 22c5.5 0 10-4.5 10-10S17.5 2 12 2 2 6.5 2 12s4.5 10 10 10zM2 12h20" d="M12 22c5.5 0 10-4.5 10-10S17.5 2 12 2 2 6.5 2 12s4.5 10 10 10zM2 12h20M12 2a15.3 15.3 0 0110 10" d="M12 22c5.5 0 10-4.5 10-10S17.5 2 12 2 2 6.5 2 12s4.5 10 10 10zM2 12h20M12 2a15.3 15.3 0 0110 10" d="M12 22c5.5 0 10-4.5 10-10S17.5 2 12 2 2 6.5 2 12s4.5 10 10 10zM2 12h20M12 2a15.3 15.3 0 0110 10" d="M12 22c5.5 0 10-4.5 10-10S17.5 2 12 2 2 6.5 2 12s4.5 10 10 10zM2 12h20M12 2a15.3 15.3 0 0110 10" d="M12 22c5.5 0 10-4.5 10-10S17.5 2 12 2 2 6.5 2 12s4.5 10 10 10zM2 12h20M12 2a15.3 15.3 0 0110 10" />
+        const Globe = (props) => <Icon {...props} path="M12 22c5.5 0 10-4.5 10-10S17.5 2 12 2 2 6.5 2 12s4.5 10 10 10zM2 12h20" />;
         const Zap = (props) => <Icon {...props} path="M18.4 13.7a2.7 2.7 0 100-5.4h-1.6l-2.4-4.8c-.3-.6-.9-1-1.6-1H8.8c-.7 0-1.3.4-1.6 1L4.8 8.3H3.2a2.7 2.7 0 100 5.4h1.6l2.4 4.8c.3.6.9 1 1.6 1h4.8c.7 0 1.3-.4 1.6-1l2.4-4.8h1.6z" />;
-        const Percent = (props) => <Icon {...props} path="M19 5L5 19" d="M19 5L5 19M18 5.5a3 3 0 11-6 0 3 3 0 016 0z" d="M19 5L5 19M18 5.5a3 3 0 11-6 0 3 3 0 016 0zM12 18.5a3 3 0 11-6 0 3 3 0 016 0z" />;
+        const Percent = (props) => <Icon {...props} path="M19 5L5 19" d="M19 5L5 19M18 5.5a3 3 0 11-6 0 3 3 0 016 0zM12 18.5a3 3 0 11-6 0 3 3 0 016 0z" />;
         const MessageCircle = (props) => <Icon {...props} path="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" />;
         const ArrowRight = (props) => <Icon {...props} path="M5 12h14" d="M5 12h14M12 5l7 7-7 7" />;
         const BarChart3 = (props) => <Icon {...props} path="M3 3v18h18" d="M18 17V9M13 17V5M8 17v-3" />;
         const Calculator = (props) => <Icon {...props} path="M20 2H4a2 2 0 00-2 2v16a2 2 0 002 2h16a2 2 0 002-2V4a2 2 0 00-2-2z" d="M12 10h.01M16 10h.01M8 10h.01M16 14h.01M12 14h.01M8 14h.01M16 18h.01M12 18h.01M8 18h.01" />;
+        const Plus = (props) => <Icon {...props} path="M12 5v14M5 12h14" />;
+        const Minus = (props) => <Icon {...props} path="M5 12h14" />;
+
         const XIcon = ({ className }) => (
             <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
                 <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
@@ -109,6 +134,25 @@
             { name: 'Bitget', standard: '0.06%', discounted: '0.03%', save: '50%', highlight: false },
             { name: 'Binance', standard: '0.04%', discounted: '0.028%', save: '30%', highlight: false },
             { name: '普通账户', standard: '0.05-0.1%', discounted: '无优惠', save: '0%', highlight: false, isBad: true }
+        ];
+        
+        const faqData = [
+            {
+                q: "什么是加密货币交易所返佣？",
+                a: "交易所返佣是平台将用户交易产生的手续费，以一定比例（如我们提供的 80%）返还给用户的机制。这能显著降低高频合约交易的成本，是专业交易者必备的福利。"
+            },
+            {
+                q: "你们的返佣比例为什么能达到 80%？",
+                a: "我们是交易所的官方顶级合作伙伴 (VIP 代理)，拥有最高的合作等级。因此，我们能够将最高比例的手续费返还给通过我们链接注册的用户。这不是普通用户的待遇。"
+            },
+            {
+                q: "返佣是自动结算的吗？如何查看？",
+                a: "是的，通过我们的专属链接注册后，返佣将自动在您的账户内生效。Gate.io 等顶级平台支持每日或每小时结算，您可以直接在交易所的返佣或邀请人后台查询您的返现记录。"
+            },
+            {
+                q: "我已经注册了普通账户，还能享受返佣吗？",
+                a: "很抱歉，交易所的返佣政策通常只对新用户首次注册有效。如果您已注册，建议联系我们的客服获取解决方案，例如注册新账户或转签事宜。请务必先咨询客服。"
+            }
         ];
 
         // --- 组件 ---
@@ -382,6 +426,53 @@
             </div>
           </div>
         );
+        
+        const FAQItem = ({ question, answer, isOpen, onClick }) => (
+            <div className="border-b border-gray-800/50">
+                <button
+                    className="flex justify-between items-center w-full py-4 text-left font-semibold text-white hover:text-indigo-400 transition-colors"
+                    onClick={onClick}
+                >
+                    <span className="text-lg">{question}</span>
+                    {isOpen ? <Minus size={20} className="text-indigo-400 shrink-0" /> : <Plus size={20} className="text-gray-400 shrink-0" />}
+                </button>
+                <div
+                    className={`overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-96 pt-0 pb-4' : 'max-h-0 pt-0 pb-0'}`}
+                >
+                    <p className="text-gray-400 text-base leading-relaxed pl-1">
+                        {answer}
+                    </p>
+                </div>
+            </div>
+        );
+        
+        const FAQSection = () => {
+            const [openIndex, setOpenIndex] = useState(null);
+
+            const handleToggle = (index) => {
+                setOpenIndex(openIndex === index ? null : index);
+            };
+
+            return (
+                <div className="bg-[#0f1115]/80 backdrop-blur-md rounded-3xl p-6 md:p-10 border border-gray-800/80 shadow-2xl">
+                    <h2 id="faq" className="text-3xl font-bold text-center text-white mb-8">
+                        关于<span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">交易所返佣</span>的常见问题
+                    </h2>
+                    <div className="max-w-4xl mx-auto">
+                        {faqData.map((item, index) => (
+                            <FAQItem
+                                key={index}
+                                question={item.q}
+                                answer={item.a}
+                                isOpen={openIndex === index}
+                                onClick={() => handleToggle(index)}
+                            />
+                        ))}
+                    </div>
+                </div>
+            );
+        };
+
 
         const Background = () => (
           <div className="fixed inset-0 -z-10 bg-[#050505]">
@@ -430,18 +521,19 @@
                       <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
                       <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
                     </span>
-                    2025年最新高返佣渠道
+                    2025年最新<span className="font-bold">加密货币</span>返佣渠道
                   </div>
                   
                   <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-8">
+                    {/* H1 标签保持核心关键词：手续费、返佣 */}
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-gray-500">拒绝高额手续费</span>
                     <br />
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">开启 80% 返佣交易</span>
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">开启 80% 终身返佣交易</span>
                   </h1>
                   
                   <p className="text-xl text-gray-400 max-w-2xl mx-auto mb-12 leading-relaxed">
-                    为您精选 Gate.io, Bitget, 币安等顶级交易所独家 VIP 渠道。
-                    <span className="text-white font-medium">注册即自动生效</span>，永久享受手续费减免。
+                    为您精选 Gate.io, Bitget, 币安等顶级<span className="font-medium text-white">交易所 VIP 渠道</span>。
+                    通过我们的<span className="text-white font-medium">邀请码注册即自动生效</span>，永久享受手续费减免，让您的合约交易更具优势。
                   </p>
 
                   {/* 🔥 超级醒目的联系方式区域 🔥 */}
@@ -451,8 +543,7 @@
                              {/* 金色发光字体 */}
                              <p className="whitespace-nowrap text-xl md:text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#FFD700] via-[#FFA500] to-[#FFD700] drop-shadow-[0_2px_10px_rgba(255,215,0,0.5)] flex items-center gap-2">
                                 <Zap size={24} className="text-yellow-400 fill-yellow-400 animate-pulse" />
-                                官方联系方式 · 一对一协助
-                                <Zap size={24} className="text-yellow-400 fill-yellow-400 animate-pulse" />
+                                官方客服 · 一对一协助<span className="text-sm font-normal text-yellow-200 ml-1">(新用户咨询优先)</span>
                              </p>
                         </div>
                         
@@ -464,12 +555,12 @@
 
                   <div className="flex flex-col sm:flex-row justify-center gap-4">
                      <a href="#list" className="px-8 py-3.5 rounded-xl bg-white text-black font-bold hover:bg-gray-200 transition-colors shadow-lg shadow-white/10 flex items-center justify-center">
-                       查看返佣列表
+                       立即查看高返佣列表
                        <ArrowRight size={18} className="ml-2" />
                      </a>
                      <a href="#compare" className="px-8 py-3.5 rounded-xl bg-gray-800 text-white font-medium border border-gray-700 hover:bg-gray-700 transition-colors flex items-center justify-center">
                        <BarChart3 size={18} className="mr-2" />
-                       手续费对比
+                       手续费节省对比
                      </a>
                   </div>
                 </div>
@@ -495,10 +586,10 @@
                         </div>
                         <h3 className="text-xl font-bold text-white mb-2">为什么一定要走返佣？</h3>
                         <p className="text-gray-400 text-sm leading-relaxed mb-4">
-                            对于合约高频交易者，手续费往往超过本金。普通账户没有任何优惠，长期交易损失巨大。
+                            对于<span className="font-medium text-indigo-300">合约高频交易者</span>，手续费往往是最大的隐形支出。普通账户没有任何优惠，长期交易损失巨大。通过返佣，您可以将这些损失转化为利润。
                         </p>
-                        <div className="text-3xl font-bold text-white mb-1">Save $5000+</div>
-                        <p className="text-xs text-indigo-300">活跃交易者平均每年节省金额</p>
+                        <div className="text-3xl font-bold text-white mb-1">终身节省 80%</div>
+                        <p className="text-xs text-indigo-300">顶级 VIP <span className="font-medium">返佣比例</span>，让您赢在起跑线</p>
                     </div>
 
                     <div className="p-6 rounded-3xl bg-[#0f1115] border border-gray-800 flex-1 flex flex-col justify-center">
@@ -523,6 +614,12 @@
                     </div>
                   </div>
                 </div>
+                
+                {/* SEO 优化新增：常见问题 (FAQ) 模块 */}
+                <div className="mb-24">
+                    <FAQSection />
+                </div>
+
 
                 {/* 底部联系方式区域 (备用) */}
                 <div id="contact" className="relative p-1 rounded-3xl bg-gradient-to-r from-gray-800 to-gray-900 mb-10 opacity-80 hover:opacity-100 transition-opacity">
@@ -538,7 +635,7 @@
               <footer className="max-w-7xl mx-auto px-4 text-center text-gray-600 text-sm py-8 border-t border-gray-900">
                 <p className="mb-2">© 2025 交易所返佣推荐. All rights reserved.</p>
                 <p className="text-xs">
-                    风险提示：加密货币交易具有极高风险，返佣比例以交易所官方实时政策为准。
+                    风险提示：加密货币交易具有极高风险，返佣比例以交易所官方实时政策为准。请在充分了解风险后进行交易。
                 </p>
               </footer>
             </div>
@@ -550,6 +647,48 @@
         if (container) {
             ReactDOM.createRoot(container).render(<App />);
         }
+    </script>
+    
+    <!-- SEO 结构化数据 (JSON-LD) - FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "什么是加密货币交易所返佣？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "交易所返佣是平台将用户交易产生的手续费，以一定比例（如我们提供的 80%）返还给用户的机制。这能显著降低高频合约交易的成本，是专业交易者必备的福利。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "你们的返佣比例为什么能达到 80%？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "我们是交易所的官方顶级合作伙伴 (VIP 代理)，拥有最高的合作等级。因此，我们能够将最高比例的手续费返还给通过我们链接注册的用户。这不是普通用户的待遇。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "返佣是自动结算的吗？如何查看？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "是的，通过我们的专属链接注册后，返佣将自动在您的账户内生效。Gate.io 等顶级平台支持每日或每小时结算，您可以直接在交易所的返佣或邀请人后台查询您的返现记录。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "我已经注册了普通账户，还能享受返佣吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "很抱歉，交易所的返佣政策通常只对新用户首次注册有效。如果您已注册，建议联系我们的客服获取解决方案，例如注册新账户或转签事宜。请务必先咨询客服。"
+          }
+        }
+      ]
+    }
     </script>
 </body>
 </html>
