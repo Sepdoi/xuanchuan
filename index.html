@@ -3,701 +3,760 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Favicon: 使用 Unicode Emoji 作为图标 -->
-    <!-- 钻石图标 (💎) 象征财富和资产 -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💎</text></svg>">
+    <!-- 网站标题 -->
+    <title>交易所返佣|加密货币|返佣|比特币|以太坊|全网最高合约返佣平台</title>
+    <meta name="description" content="提供全网最高的加密货币交易所注册返佣。Gate.io芝麻开门80%返佣，Bitget 50%返佣，币安Binance 30%返佣。提供合约手续费计算器，Telegram: sepdoi。">
+    <meta name="keywords" content="交易所返佣, 加密货币返佣, 比特币返佣, 以太坊返佣, 合约返佣, Gate邀请码, Bitget邀请码, 币安邀请码">
     
-    <!-- SEO Title: 包含核心关键词 -->
-    <title>交易所返佣推荐 | 80%手续费返现 | 顶级加密货币交易所 VIP 渠道</title>
-    
-    <!-- SEO Meta Description: 关键卖点摘要 -->
-    <meta name="description" content="寻找最高加密货币交易所返佣？我们提供 Gate.io、Bitget、币安等平台独家 VIP 渠道，终身享受 80% 手续费返现，每日自动结算。高频交易者必备。">
-    <meta name="keywords" content="交易所返佣,加密货币手续费返现,Gateio返佣,Bitget返佣,币安VIP,合约交易">
-
-    <!-- Geo / Language Meta Tags -->
-    <!-- 针对中国大陆用户和全球中文用户，使用 zh-CN -->
-    <link rel="alternate" href="[您的网站URL]" hreflang="zh-CN" />
-    
-    <!-- Open Graph Tags (for Social Media Sharing) -->
-    <meta property="og:title" content="交易所返佣推荐 | 80%手续费返现 VIP 渠道" />
-    <meta property="og:description" content="为您精选顶级交易所最高返佣渠道，拒绝高额手续费，开启 80% 返佣交易！" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="[您的网站URL]" />
-    <!-- 建议此处添加一张有吸引力的 Logo 或宣传图 URL -->
-    <meta property="og:image" content="https://placehold.co/1200x630/000/fff?text=Crypto+Rebate" />
-
-    <!-- 引入 Tailwind CSS CDN -->
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- 引入 React CDN -->
-    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-    <!-- 引入 Babel CDN，用于在浏览器中转换 JSX -->
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Noto Sans SC', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            gate: '#ff4d4f', 
+                            bitget: '#00f0ff', 
+                            binance: '#F0B90B', 
+                            dark: '#0f172a',
+                            telegram: '#229ED9',
+                            x: '#000000' // X 平台的主色调
+                        }
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'shine': 'shine 1.5s infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        shine: {
+                            '100%': { left: '125%' }
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
     <style>
-        /* 确保 Inter 字体可用 */
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
         body {
-            font-family: 'Inter', sans-serif;
+            background-color: #020617;
+            color: #ffffff;
+            overflow-x: hidden;
         }
-        /* 确保动画效果流畅 */
-        .animate-fade-in-up {
-            animation: fadeInUp 0.5s ease-out forwards;
+
+        /* Glassmorphism */
+        .glass-card {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .glass-header {
+            background: rgba(2, 6, 23, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        /* Background Canvas */
+        #bg-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        /* Text Gradients */
+        .text-gradient {
+            background: linear-gradient(to right, #22d3ee, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .text-gradient-gold {
+            background: linear-gradient(to right, #F0B90B, #ffedd5);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Shine Button Effect */
+        .btn-shine {
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-shine::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -75%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 100%);
+            transform: skewX(-25deg);
+            animation: shine 3s infinite;
+        }
+
+        /* Range Slider Styling */
+        input[type=range] {
+            -webkit-appearance: none;
+            background: transparent;
+        }
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            background: #22d3ee;
+            cursor: pointer;
+            margin-top: -8px;
+            box-shadow: 0 0 10px rgba(34, 211, 238, 0.5);
+        }
+        input[type=range]::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 4px;
+            cursor: pointer;
+            background: #334155;
+            border-radius: 2px;
+        }
+        
+        /* Toast */
+        #toast {
+            visibility: hidden;
+            min-width: 250px;
+            background-color: #10b981;
+            color: white;
+            text-align: center;
+            border-radius: 8px;
+            padding: 16px;
+            position: fixed;
+            z-index: 100;
+            left: 50%;
+            bottom: 30px;
+            transform: translateX(-50%);
             opacity: 0;
+            transition: opacity 0.3s, bottom 0.3s;
         }
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        #toast.show {
+            visibility: visible;
+            opacity: 1;
+            bottom: 50px;
         }
     </style>
 </head>
-<body class="bg-[#050505] min-h-screen">
-    <div id="root">
-        <!-- React App will be rendered here -->
-    </div>
+<body class="antialiased selection:bg-cyan-500 selection:text-white font-sans">
 
-    <!-- 核心 React/JSX 代码块 -->
-    <script type="text/babel">
-        const { useState, useEffect } = React;
+    <canvas id="bg-canvas"></canvas>
 
-        // --- 重新定义 Lucide Icons (Inline SVGs) ---
-        const Icon = ({ path, size = 20, className = "" }) => (
-            <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
-                <path d={path} />
-            </svg>
-        );
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-header transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white font-bold text-2xl">
+                        <i class="fa-solid fa-coins"></i>
+                    </div>
+                    <span class="font-bold text-xl tracking-wider text-white">交易所<span class="text-cyan-400">返佣</span></span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="hover:text-cyan-400 text-sm font-medium transition-colors">首页</a>
+                    <a href="#exchanges" class="hover:text-cyan-400 text-sm font-medium transition-colors">返佣渠道</a>
+                    <a href="#calculator" class="hover:text-cyan-400 text-sm font-medium transition-colors">合约计算器</a>
+                    <a href="#faq" class="hover:text-cyan-400 text-sm font-medium transition-colors">常见问题</a>
+                </div>
 
-        const Copy = (props) => <Icon {...props} path="M15 5h2c2.2 0 4 1.8 4 4v10c0 2.2-1.8 4-4 4H7c-2.2 0-4-1.8-4-4V9c0-2.2 1.8-4 4-4h2" />;
-        const Check = (props) => <Icon {...props} path="M20 6 9 17l-5-5" />;
-        const TrendingUp = (props) => <Icon {...props} path="m18 10 3-3L2 2" d="m18 10 3-3L2 2M15 14l-3 3l-4-4l-3 3" />;
-        const Shield = (props) => <Icon {...props} path="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />;
-        const Globe = (props) => <Icon {...props} path="M12 22c5.5 0 10-4.5 10-10S17.5 2 12 2 2 6.5 2 12s4.5 10 10 10zM2 12h20" />;
-        const Zap = (props) => <Icon {...props} path="M18.4 13.7a2.7 2.7 0 100-5.4h-1.6l-2.4-4.8c-.3-.6-.9-1-1.6-1H8.8c-.7 0-1.3.4-1.6 1L4.8 8.3H3.2a2.7 2.7 0 100 5.4h1.6l2.4 4.8c.3.6.9 1 1.6 1h4.8c.7 0 1.3-.4 1.6-1l2.4-4.8h1.6z" />;
-        const Percent = (props) => <Icon {...props} path="M19 5L5 19" d="M19 5L5 19M18 5.5a3 3 0 11-6 0 3 3 0 016 0zM12 18.5a3 3 0 11-6 0 3 3 0 016 0z" />;
-        const MessageCircle = (props) => <Icon {...props} path="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" />;
-        const ArrowRight = (props) => <Icon {...props} path="M5 12h14" d="M5 12h14M12 5l7 7-7 7" />;
-        const BarChart3 = (props) => <Icon {...props} path="M3 3v18h18" d="M18 17V9M13 17V5M8 17v-3" />;
-        const Calculator = (props) => <Icon {...props} path="M20 2H4a2 2 0 00-2 2v16a2 2 0 002 2h16a2 2 0 002-2V4a2 2 0 00-2-2z" d="M12 10h.01M16 10h.01M8 10h.01M16 14h.01M12 14h.01M8 14h.01M16 18h.01M12 18h.01M8 18h.01" />;
-        const Plus = (props) => <Icon {...props} path="M12 5v14M5 12h14" />;
-        const Minus = (props) => <Icon {...props} path="M5 12h14" />;
+                <!-- Contact Short (Desktop) -->
+                <div class="hidden md:flex items-center gap-4">
+                    <a href="https://t.me/sepdoi" target="_blank" class="text-brand-telegram hover:text-white transition-colors" title="Telegram">
+                        <i class="fa-brands fa-telegram text-2xl"></i>
+                    </a>
+                    <!-- X Logo (Updated to inline SVG for reliability) -->
+                    <a href="https://x.com/sepdoi" target="_blank" class="text-white hover:text-slate-400 transition-colors" title="X">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.814L4.908 21.75H1.69L10.642 11.23 2.22 2.25h3.572L12 8.718l6.244-6.468z" />
+                        </svg>
+                    </a>
+                    <a href="#exchanges" class="bg-cyan-600 hover:bg-cyan-500 text-white px-5 py-2 rounded-full font-semibold text-sm transition-all shadow-lg shadow-cyan-500/20 btn-shine">
+                        领取返佣
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-        const XIcon = ({ className }) => (
-            <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
-                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-            </svg>
-        );
-        const WechatIcon = ({ className }) => (
-            <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
-                <path d="M8.6 15.6c-.2 0-.4 0-.6.1-.2.4-.4.8-.4 1.2 0 1.9 1.9 3.5 4.3 3.5 2.4 0 4.3-1.6 4.3-3.5 0-1.9-1.9-3.5-4.3-3.5-.7 0-1.4.1-2 .4.2-.4.4-.8.5-1.3 2.1-.3 3.8-1.9 3.8-3.9 0-2.2-2.1-4-4.7-4S4.8 6.5 4.8 8.7c0 1.2.6 2.3 1.6 3-.1.4-.3 1-.6 1.6.8.2 1.9.1 2.5-.3.2.1.4.1.7.1 2.9 0 5.3-2 5.3-4.4 0-2.4-2.4-4.4-5.3-4.4S3.7 6.3 3.7 8.7c0 2 1.6 3.7 3.9 4.2-.1.5-.2.8-.2.9s-1 .3-1.6.4c1.1 1.7 3.3 2.6 5.5 2.1.6 1.1 1.9 1.9 3.5 1.9 2.1 0 3.8-1.6 3.8-3.5 0-1.9-1.7-3.5-3.8-3.5-.6 0-1.2.2-1.7.5-.1-.4-.2-.8-.4-1.1z" />
-            </svg>
-        );
-
-        // --- 数据配置 ---
-        const contactInfo = {
-            telegram: 'sepdoi',
-            x: 'sepdoi',
-            wechat: '待定'
-        };
-
-        const exchanges = [
-            {
-                id: 'gate', name: 'Gate.io', displayName: '芝麻开门', tag: '返佣之王', rebate: '80%',
-                code: 'PPPPTTTT', color: 'from-[#00d4ff] to-[#0052ff]', bgHover: 'hover:shadow-[#0052ff]/40',
-                border: 'border-[#00d4ff]/30', icon: <Zap className="w-6 h-6 text-white" />,
-                features: ['全网最高返佣比例', '老牌安全交易所', '币种最丰富'],
-                link: 'https://www.gate.io/signup/PPPPTTTT', popular: true
-            },
-            {
-                id: 'bitget', name: 'Bitget', displayName: 'Bitget', tag: '合约首选', rebate: '50%',
-                code: 'BTC18188', color: 'from-[#00f2ea] to-[#00c6fb]', bgHover: 'hover:shadow-[#00c6fb]/40',
-                border: 'border-[#00f2ea]/30', icon: <TrendingUp className="w-6 h-6 text-white" />,
-                features: ['跟单系统成熟', '合约深度好', '无插针'],
-                link: 'https://www.bitget.com/express/BTC18188', popular: false
-            },
-            {
-                id: 'binance', name: 'Binance', displayName: '币安', tag: '全球第一', rebate: '30%',
-                code: 'BTC588', color: 'from-[#f3ba2f] to-[#fcd535]', bgHover: 'hover:shadow-[#f3ba2f]/40',
-                border: 'border-[#f3ba2f]/30', icon: <Globe className="w-6 h-6 text-white" />,
-                features: ['流动性全球第一', '出入金方便', 'P2P市场活跃'],
-                link: 'https://accounts.binance.com/register?ref=BTC588', popular: false
-            }
-        ];
-
-        const feeComparison = [
-            { name: 'Gate.io', standard: '0.05%', discounted: '0.01%', save: '80%', highlight: true },
-            { name: 'Bitget', standard: '0.06%', discounted: '0.03%', save: '50%', highlight: false },
-            { name: 'Binance', standard: '0.04%', discounted: '0.028%', save: '30%', highlight: false },
-            { name: '普通账户', standard: '0.05-0.1%', discounted: '无优惠', save: '0%', highlight: false, isBad: true }
-        ];
-        
-        const faqData = [
-            {
-                q: "什么是加密货币交易所返佣？",
-                a: "交易所返佣是平台将用户交易产生的手续费，以一定比例（如我们提供的 80%）返还给用户的机制。这能显著降低高频合约交易的成本，是专业交易者必备的福利。"
-            },
-            {
-                q: "你们的返佣比例为什么能达到 80%？",
-                a: "我们是交易所的官方顶级合作伙伴 (VIP 代理)，拥有最高的合作等级。因此，我们能够将最高比例的手续费返还给通过我们链接注册的用户。这不是普通用户的待遇。"
-            },
-            {
-                q: "返佣是自动结算的吗？如何查看？",
-                a: "是的，通过我们的专属链接注册后，返佣将自动在您的账户内生效。Gate.io 等顶级平台支持每日或每小时结算，您可以直接在交易所的返佣或邀请人后台查询您的返现记录。"
-            },
-            {
-                q: "我已经注册了普通账户，还能享受返佣吗？",
-                a: "很抱歉，交易所的返佣政策通常只对新用户首次注册有效。如果您已注册，建议联系我们的客服获取解决方案，例如注册新账户或转签事宜。请务必先咨询客服。"
-            }
-        ];
-
-        // --- 组件 ---
-
-        // 优化的通用复制按钮组件
-        const CopyTrigger = ({ text, className, iconSize = 16 }) => {
-          const [copied, setCopied] = useState(false);
-
-          const handleCopy = async (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-
-            const fallbackCopy = (textToCopy) => {
-              const textArea = document.createElement("textarea");
-              textArea.value = textToCopy;
-              textArea.style.position = "fixed";
-              textArea.style.left = "-9999px";
-              textArea.style.top = "0";
-              document.body.appendChild(textArea);
-              textArea.focus();
-              textArea.select();
-              
-              try {
-                const successful = document.execCommand('copy');
-                if (successful) {
-                    setCopied(true);
-                    setTimeout(() => setCopied(false), 2000);
-                }
-              } catch (err) {
-                console.error('Fallback copy failed', err);
-              }
-              
-              document.body.removeChild(textArea);
-            };
+    <!-- Hero Section -->
+    <section id="home" class="pt-32 pb-16 sm:pt-40 sm:pb-20 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
             
-            if (navigator.clipboard && window.isSecureContext) {
-                try {
-                    await navigator.clipboard.writeText(text);
-                    setCopied(true);
-                    setTimeout(() => setCopied(false), 2000);
-                } catch (err) {
-                    fallbackCopy(text);
-                }
-            } else {
-                fallbackCopy(text);
-            }
-          };
+            <!-- Badge -->
+            <div class="inline-flex items-center gap-2 mb-6 px-4 py-1.5 rounded-full glass-card border-cyan-500/30 animate-float">
+                <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                <span class="text-cyan-400 text-xs sm:text-sm font-bold tracking-wide uppercase">2024年 全网最高合约返佣平台</span>
+            </div>
 
-          return (
-            <button
-              onClick={handleCopy}
-              className={`flex items-center justify-center transition-all duration-200 active:scale-90 z-20 ${className} ${
-                copied ? 'text-green-400 bg-green-400/10' : 'hover:text-white hover:bg-white/10'
-              }`}
-              title="点击复制"
-            >
-              {copied ? <Check size={iconSize} /> : <Copy size={iconSize} />}
-            </button>
-          );
-        };
+            <!-- Main Heading -->
+            <h1 class="text-4xl sm:text-6xl md:text-7xl font-black tracking-tight mb-6 leading-tight">
+                交易越频繁 <br>
+                <span class="text-gradient">越需要顶级返佣</span>
+            </h1>
+            
+            <p class="mt-4 max-w-2xl mx-auto text-lg sm:text-xl text-slate-300">
+                Gate 80% · Bitget 50% · 币安 30%<br>
+                不仅是现货，<span class="text-white font-bold border-b-2 border-cyan-500">合约高频交易</span>更能节省巨额手续费。
+            </p>
 
-        const ExchangeCard = ({ data }) => {
-          return (
-            <div className={`relative flex flex-col h-full bg-[#1a1b26]/60 backdrop-blur-xl rounded-3xl border ${data.border} transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl ${data.bgHover} group overflow-hidden`}>
-              {/* 热门标签 */}
-              {data.popular && (
-                <div className="absolute top-0 right-0 z-10">
-                  <div className="bg-gradient-to-l from-red-500 to-pink-600 text-white text-xs font-bold px-3 py-1 rounded-bl-xl shadow-lg">
-                    热门推荐
-                  </div>
-                </div>
-              )}
-              
-              {/* 顶部渐变条 */}
-              <div className={`h-1.5 w-full bg-gradient-to-r ${data.color}`} />
-
-              <div className="p-6 md:p-8 flex-1 flex flex-col">
-                {/* 头部信息 */}
-                <div className="flex items-start justify-between mb-6">
-                  <div className="flex items-center space-x-4">
-                    <div className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${data.color} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                      {data.icon}
-                    </div>
-                    <div>
-                      <h3 className="text-2xl font-bold text-white tracking-tight">{data.name}</h3>
-                      <div className="flex items-center gap-2 mt-1">
-                        <span className="text-gray-400 text-sm">{data.displayName}</span>
-                        <span className={`text-[10px] px-2 py-0.5 rounded-full border border-white/10 text-white/70 bg-white/5`}>
-                          {data.tag}
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* 返佣展示 */}
-                <div className="mb-6 p-4 rounded-2xl bg-gradient-to-r from-gray-800/50 to-gray-900/50 border border-white/5 relative overflow-hidden">
-                    <div className={`absolute top-0 left-0 w-1 h-full bg-gradient-to-b ${data.color}`} />
-                    <div className="flex justify-between items-end">
-                        <div>
-                            <p className="text-gray-400 text-xs mb-1">终身返佣比例</p>
-                            <p className={`text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r ${data.color}`}>
-                                {data.rebate}
-                            </p>
+            <!-- Prominent Contact Box -->
+            <div class="mt-8 mb-10 max-w-lg mx-auto">
+                <div class="glass-card rounded-xl p-1 bg-gradient-to-r from-slate-800 to-slate-900 border border-slate-600/50">
+                    <div class="flex flex-col sm:flex-row items-center justify-between px-6 py-3 gap-4">
+                        <div class="flex items-center gap-3">
+                            <span class="bg-green-500/20 text-green-400 text-xs font-bold px-2 py-1 rounded">官方商务</span>
+                            <span class="text-sm text-slate-300">一对一开通返佣权限</span>
                         </div>
-                        <div className="text-right">
-                            <p className="text-gray-500 text-xs mb-1">最高等级</p>
-                            <div className="flex space-x-1">
-                                {[1,2,3,4,5].map(i => <div key={i} className={`w-1.5 h-4 rounded-full bg-gradient-to-t ${data.color} opacity-${i*20}`} />)}
+                        <div class="flex items-center gap-3">
+                            <a href="https://t.me/sepdoi" target="_blank" class="flex items-center gap-2 px-3 py-1.5 rounded hover:bg-slate-700 transition-colors group">
+                                <i class="fa-brands fa-telegram text-brand-telegram text-xl group-hover:scale-110 transition-transform"></i>
+                                <span class="text-sm font-bold text-white">sepdoi</span>
+                            </a>
+                            <div class="h-4 w-px bg-slate-600"></div>
+                            <!-- X Logo (Updated to inline SVG for reliability) -->
+                            <a href="https://x.com/sepdoi" target="_blank" class="flex items-center gap-2 px-3 py-1.5 rounded hover:bg-slate-700 transition-colors group">
+                                <svg class="w-4 h-4 fill-current text-white group-hover:scale-110 transition-transform" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.814L4.908 21.75H1.69L10.642 11.23 2.22 2.25h3.572L12 8.718l6.244-6.468z" />
+                                </svg>
+                                <span class="text-sm font-bold text-white">sepdoi</span>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Wechat Pending -->
+                    <div class="bg-slate-950/50 text-center py-1 text-xs text-slate-500 rounded-b-lg">
+                        微信客服：<span class="text-slate-600 italic">通道维护中 (待定)</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- CTAs -->
+            <div class="flex justify-center gap-4">
+                <a href="#exchanges" class="px-8 py-4 bg-white text-slate-900 font-bold rounded-full transition-all hover:scale-105 shadow-[0_0_20px_rgba(255,255,255,0.2)]">
+                    获取邀请码
+                </a>
+                <a href="#calculator" class="px-8 py-4 glass-card text-white font-bold rounded-full transition-all hover:bg-slate-800 hover:border-cyan-500/50">
+                    计算能省多少 <i class="fa-solid fa-calculator ml-2 text-cyan-400"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Exchanges Section -->
+    <section id="exchanges" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold sm:text-4xl mb-4 text-white">精选三大顶级交易所</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-cyan-500 to-blue-600 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                
+                <!-- Gate.io Card -->
+                <div class="glass-card rounded-2xl p-1 relative group hover:-translate-y-2 transition-transform duration-300">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-red-500 to-orange-500 text-white font-bold px-4 py-1 rounded-full text-sm shadow-lg z-20">
+                        返佣天花板 80%
+                    </div>
+                    <div class="bg-slate-900/80 rounded-xl p-8 h-full flex flex-col items-center border border-red-500/30 group-hover:border-red-500/60 transition-colors">
+                        <div class="w-16 h-16 rounded-full bg-slate-800 flex items-center justify-center mb-6 shadow-lg shadow-red-500/20">
+                            <span class="font-bold text-2xl text-brand-gate">Gt</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-1">Gate.io 芝麻开门</h3>
+                        <p class="text-xs text-brand-gate font-bold mb-4 uppercase tracking-widest">Global Top 10</p>
+                        
+                        <div class="w-full space-y-2 mb-6">
+                            <div class="flex justify-between text-sm border-b border-slate-700 pb-2">
+                                <span class="text-slate-400">现货返佣</span>
+                                <span class="text-white font-bold">80%</span>
+                            </div>
+                            <div class="flex justify-between text-sm pb-2">
+                                <span class="text-slate-400">合约返佣</span>
+                                <span class="text-white font-bold">80%</span>
                             </div>
                         </div>
+
+                        <div class="w-full bg-slate-950 rounded-lg p-4 mb-6 text-center border border-slate-800 relative overflow-hidden">
+                            <div class="absolute inset-0 bg-red-500/5"></div>
+                            <p class="text-xs text-slate-500 uppercase mb-1 relative z-10">专属邀请码 (点击复制)</p>
+                            <div class="flex items-center justify-center gap-2 group/code cursor-pointer relative z-10" onclick="copyToClipboard('PPPPPTTTT')">
+                                <code class="text-2xl font-mono font-bold text-red-400 tracking-wider">PPPPPTTTT</code>
+                                <i class="fa-regular fa-copy text-slate-500 group-hover/code:text-white transition-colors"></i>
+                            </div>
+                        </div>
+
+                        <button onclick="copyToClipboard('PPPPPTTTT')" class="w-full py-3 bg-gradient-to-r from-red-600 to-orange-600 rounded-lg font-bold hover:brightness-110 transition-all btn-shine shadow-lg shadow-red-900/50">
+                            复制并注册
+                        </button>
                     </div>
                 </div>
 
-                {/* 邀请码 */}
-                <div className="bg-black/30 rounded-xl p-4 border border-white/5 mb-6 group-hover:border-white/10 transition-colors">
-                  <p className="text-xs text-gray-500 mb-2 flex items-center">
-                    <Shield size={12} className="mr-1 text-green-400" /> 官方认证邀请码
-                  </p>
-                  <div className="flex items-center justify-between gap-2">
-                    <span className="font-mono text-xl font-bold text-white tracking-wider truncate">{data.code}</span>
-                    <CopyTrigger 
-                      text={data.code} 
-                      className="px-3 py-1.5 rounded-lg text-xs bg-gray-700/50 text-white border border-transparent hover:border-white/20 shrink-0"
-                    />
-                  </div>
-                </div>
+                <!-- Bitget Card -->
+                <div class="glass-card rounded-2xl p-1 relative group hover:-translate-y-2 transition-transform duration-300">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-cyan-500 text-black font-bold px-4 py-1 rounded-full text-sm shadow-lg z-20">
+                        合约首选 50%
+                    </div>
+                    <div class="bg-slate-900/80 rounded-xl p-8 h-full flex flex-col items-center border border-cyan-500/30 group-hover:border-cyan-500/60 transition-colors">
+                        <div class="w-16 h-16 rounded-full bg-slate-800 flex items-center justify-center mb-6 shadow-lg shadow-cyan-500/20">
+                            <span class="font-bold text-2xl text-brand-bitget">Bg</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-1">Bitget</h3>
+                        <p class="text-xs text-cyan-400 font-bold mb-4 uppercase tracking-widest">Copy Trading King</p>
+                        
+                        <div class="w-full space-y-2 mb-6">
+                            <div class="flex justify-between text-sm border-b border-slate-700 pb-2">
+                                <span class="text-slate-400">现货返佣</span>
+                                <span class="text-white font-bold">50%</span>
+                            </div>
+                            <div class="flex justify-between text-sm pb-2">
+                                <span class="text-slate-400">合约返佣</span>
+                                <span class="text-white font-bold">50%</span>
+                            </div>
+                        </div>
 
-                {/* 特性列表 */}
-                <ul className="space-y-3 mb-8 flex-1">
-                  {data.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-center text-sm text-gray-300">
-                      <Check size={14} className={`mr-2 text-transparent bg-clip-text bg-gradient-to-r ${data.color} min-w-[14px]`} />
-                      <span className="text-white/80">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
+                        <div class="w-full bg-slate-950 rounded-lg p-4 mb-6 text-center border border-slate-800 relative overflow-hidden">
+                            <div class="absolute inset-0 bg-cyan-500/5"></div>
+                            <p class="text-xs text-slate-500 uppercase mb-1 relative z-10">专属邀请码 (点击复制)</p>
+                            <div class="flex items-center justify-center gap-2 group/code cursor-pointer relative z-10" onclick="copyToClipboard('BTC18188')">
+                                <code class="text-2xl font-mono font-bold text-cyan-400 tracking-wider">BTC18188</code>
+                                <i class="fa-regular fa-copy text-slate-500 group-hover/code:text-white transition-colors"></i>
+                            </div>
+                        </div>
 
-                {/* 注册按钮 */}
-                <a 
-                  href={data.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`group/btn relative w-full py-4 rounded-xl font-bold text-white text-center overflow-hidden transition-all shadow-lg hover:shadow-xl`}
-                >
-                  <div className={`absolute inset-0 bg-gradient-to-r ${data.color} opacity-90 transition-opacity group-hover/btn:opacity-100`} />
-                  <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20" />
-                  <span className="relative flex items-center justify-center gap-2">
-                    立即注册领返佣
-                    <ArrowRight size={18} className="group-hover/btn:translate-x-1 transition-transform" />
-                  </span>
-                </a>
-              </div>
-            </div>
-          );
-        };
-
-        // 优化的联系方式栏，支持一键复制
-        const ContactBar = ({ className = "" }) => (
-          <div className={`flex flex-wrap items-center justify-center gap-4 md:gap-6 ${className}`}>
-            {/* Telegram */}
-            <a 
-              href={`https://t.me/${contactInfo.telegram}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="relative flex items-center gap-3 pl-6 pr-12 py-3 rounded-full bg-[#2AABEE] text-white hover:bg-[#229ED9] transition-all hover:scale-105 active:scale-95 shadow-[0_0_15px_rgba(42,171,238,0.4)] group overflow-hidden"
-            >
-              <MessageCircle size={20} className="animate-bounce" />
-              <span className="font-bold text-lg">@{contactInfo.telegram}</span>
-              
-              {/* 独立的复制按钮区域 - 绝对定位在右侧 */}
-              <div className="absolute right-1 top-1 bottom-1 w-10 flex items-center justify-center border-l border-white/20 bg-[#2AABEE] group-hover:bg-[#229ED9]">
-                <CopyTrigger 
-                    text={contactInfo.telegram} 
-                    className="w-8 h-8 rounded-full hover:bg-black/10" 
-                    iconSize={16}
-                />
-              </div>
-            </a>
-
-            {/* X / Twitter */}
-            <a 
-              href={`https://x.com/${contactInfo.x}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="relative flex items-center gap-3 pl-6 pr-12 py-3 rounded-full bg-black border border-gray-700 text-white hover:border-white transition-all hover:scale-105 active:scale-95 shadow-lg group overflow-hidden"
-            >
-              <XIcon className="w-5 h-5" />
-              <span className="font-bold text-lg">@{contactInfo.x}</span>
-              
-              {/* 独立的复制按钮区域 */}
-              <div className="absolute right-1 top-1 bottom-1 w-10 flex items-center justify-center border-l border-gray-700 group-hover:border-white/20 bg-black">
-                <CopyTrigger 
-                    text={contactInfo.x} 
-                    className="w-8 h-8 rounded-full hover:bg-white/20" 
-                    iconSize={16}
-                />
-              </div>
-            </a>
-
-            {/* WeChat - 支持复制 */}
-            <div className="relative flex items-center gap-3 pl-6 pr-12 py-3 rounded-full bg-[#07C160]/10 border border-[#07C160]/30 text-[#07C160] group cursor-default hover:bg-[#07C160]/20 transition-colors">
-              <WechatIcon className="w-5 h-5" />
-              <span className="font-bold text-lg">
-                {contactInfo.wechat === '待定' ? '微信待定' : contactInfo.wechat}
-              </span>
-              
-              {/* 独立的复制按钮区域 */}
-              <div className="absolute right-1 top-1 bottom-1 w-10 flex items-center justify-center border-l border-[#07C160]/20">
-                <CopyTrigger 
-                    text={contactInfo.wechat} 
-                    className="w-8 h-8 rounded-full hover:bg-[#07C160]/20" 
-                    iconSize={16}
-                />
-              </div>
-            </div>
-          </div>
-        );
-
-        const FeeTable = () => (
-          <div className="w-full overflow-hidden rounded-3xl border border-gray-800 bg-[#0f1115]/80 backdrop-blur-md shadow-2xl">
-            <div className="p-6 border-b border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4">
-              <div className="flex items-center gap-3">
-                <div className="p-2 bg-indigo-500/10 rounded-lg">
-                  <Calculator className="text-indigo-400 w-6 h-6" />
-                </div>
-                <div>
-                    <h3 className="text-xl font-bold text-white">合约手续费节省对比</h3>
-                    <p className="text-sm text-gray-400">基于 100,000 USDT 交易量估算</p>
-                </div>
-              </div>
-              <div className="text-xs px-3 py-1 bg-gray-800 rounded-full text-gray-400 border border-gray-700">
-                数据仅供参考，以官方实时费率为准
-              </div>
-            </div>
-            
-            <div className="overflow-x-auto">
-              <table className="w-full text-left border-collapse">
-                <thead>
-                  <tr className="border-b border-gray-800 text-gray-400 text-sm">
-                    <th className="p-4 pl-6 font-medium">交易所</th>
-                    <th className="p-4 font-medium hidden sm:table-cell">普通用户费率</th>
-                    <th className="p-4 font-medium">邀请码用户费率</th>
-                    <th className="p-4 font-medium text-right pr-6">每十万U节省</th>
-                  </tr>
-                </thead>
-                <tbody className="text-sm">
-                  {feeComparison.map((item, idx) => (
-                    <tr key={idx} className={`border-b border-gray-800/50 last:border-0 hover:bg-white/5 transition-colors ${item.isBad ? 'opacity-50 grayscale' : ''}`}>
-                      <td className="p-4 pl-6 font-bold text-white flex items-center gap-2">
-                        {item.highlight && <Zap size={14} className="text-yellow-400 fill-yellow-400" />}
-                        {item.name}
-                      </td>
-                      <td className="p-4 text-gray-400 hidden sm:table-cell">{item.standard}</td>
-                      <td className={`p-4 font-mono font-medium ${item.isBad ? 'text-gray-500' : 'text-green-400'}`}>
-                        {item.discounted}
-                      </td>
-                      <td className="p-4 pr-6 text-right">
-                        <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
-                          item.isBad 
-                            ? 'bg-gray-800 text-gray-400' 
-                            : 'bg-green-900/30 text-green-400 border border-green-500/20'
-                        }`}>
-                          {item.save === '0%' ? '无' : `省 ${item.save}`}
-                        </span>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-        );
-        
-        const FAQItem = ({ question, answer, isOpen, onClick }) => (
-            <div className="border-b border-gray-800/50">
-                <button
-                    className="flex justify-between items-center w-full py-4 text-left font-semibold text-white hover:text-indigo-400 transition-colors"
-                    onClick={onClick}
-                >
-                    <span className="text-lg">{question}</span>
-                    {isOpen ? <Minus size={20} className="text-indigo-400 shrink-0" /> : <Plus size={20} className="text-gray-400 shrink-0" />}
-                </button>
-                <div
-                    className={`overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-96 pt-0 pb-4' : 'max-h-0 pt-0 pb-0'}`}
-                >
-                    <p className="text-gray-400 text-base leading-relaxed pl-1">
-                        {answer}
-                    </p>
-                </div>
-            </div>
-        );
-        
-        const FAQSection = () => {
-            const [openIndex, setOpenIndex] = useState(null);
-
-            const handleToggle = (index) => {
-                setOpenIndex(openIndex === index ? null : index);
-            };
-
-            return (
-                <div className="bg-[#0f1115]/80 backdrop-blur-md rounded-3xl p-6 md:p-10 border border-gray-800/80 shadow-2xl">
-                    <h2 id="faq" className="text-3xl font-bold text-center text-white mb-8">
-                        关于<span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">交易所返佣</span>的常见问题
-                    </h2>
-                    <div className="max-w-4xl mx-auto">
-                        {faqData.map((item, index) => (
-                            <FAQItem
-                                key={index}
-                                question={item.q}
-                                answer={item.a}
-                                isOpen={openIndex === index}
-                                onClick={() => handleToggle(index)}
-                            />
-                        ))}
+                        <button onclick="copyToClipboard('BTC18188')" class="w-full py-3 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-lg font-bold hover:brightness-110 transition-all btn-shine shadow-lg shadow-cyan-900/50">
+                            复制并注册
+                        </button>
                     </div>
                 </div>
-            );
-        };
 
-
-        const Background = () => (
-          <div className="fixed inset-0 -z-10 bg-[#050505]">
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-indigo-900/20 via-[#050505] to-[#050505]" />
-            {/* 动态光斑 */}
-            <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-blue-600/10 blur-[120px] animate-pulse" />
-            <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-purple-600/10 blur-[120px] animate-pulse delay-700" />
-            <div className="absolute top-[40%] left-[50%] w-[30%] h-[30%] rounded-full bg-emerald-600/5 blur-[100px] animate-pulse delay-1000" />
-            {/* 网格线 */}
-            <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.03]" />
-            <div 
-              className="absolute inset-0 opacity-[0.05]" 
-              style={{
-                backgroundImage: 'linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px)',
-                backgroundSize: '50px 50px'
-              }}
-            />
-          </div>
-        );
-
-        const App = () => {
-          return (
-            <div className="min-h-screen text-gray-100 font-sans selection:bg-indigo-500/30 selection:text-white pb-20">
-              <Background />
-              
-              {/* Navbar */}
-              <nav className="fixed top-0 w-full z-50 border-b border-white/5 bg-[#050505]/80 backdrop-blur-xl supports-[backdrop-filter]:bg-[#050505]/60">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <div className="w-8 h-8 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center">
-                      <Percent size={20} className="text-white" />
+                <!-- Binance Card -->
+                <div class="glass-card rounded-2xl p-1 relative group hover:-translate-y-2 transition-transform duration-300">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-yellow-500 text-black font-bold px-4 py-1 rounded-full text-sm shadow-lg z-20">
+                        宇宙第一 30%
                     </div>
-                    {/* 网站名称 */}
-                    <span className="text-xl font-bold tracking-tight text-white">交易所返佣<span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">推荐</span></span>
-                  </div>
-                  <a href="#contact" className="hidden sm:block text-sm font-medium text-gray-300 hover:text-white transition-colors">联系客服</a>
-                </div>
-              </nav>
+                    <div class="bg-slate-900/80 rounded-xl p-8 h-full flex flex-col items-center border border-yellow-500/30 group-hover:border-yellow-500/60 transition-colors">
+                        <div class="w-16 h-16 rounded-full bg-slate-800 flex items-center justify-center mb-6 shadow-lg shadow-yellow-500/20">
+                             <i class="fa-brands fa-bitcoin text-brand-binance text-3xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-1">Binance 币安</h3>
+                        <p class="text-xs text-yellow-500 font-bold mb-4 uppercase tracking-widest">No.1 Volume</p>
+                        
+                        <div class="w-full space-y-2 mb-6">
+                            <div class="flex justify-between text-sm border-b border-slate-700 pb-2">
+                                <span class="text-slate-400">现货返佣</span>
+                                <span class="text-white font-bold">30%</span>
+                            </div>
+                            <div class="flex justify-between text-sm pb-2">
+                                <span class="text-slate-400">合约返佣</span>
+                                <span class="text-white font-bold">30%</span>
+                            </div>
+                        </div>
 
-              <main className="pt-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+                        <div class="w-full bg-slate-950 rounded-lg p-4 mb-6 text-center border border-slate-800 relative overflow-hidden">
+                            <div class="absolute inset-0 bg-yellow-500/5"></div>
+                            <p class="text-xs text-slate-500 uppercase mb-1 relative z-10">专属邀请码 (点击复制)</p>
+                            <div class="flex items-center justify-center gap-2 group/code cursor-pointer relative z-10" onclick="copyToClipboard('BTC588')">
+                                <code class="text-2xl font-mono font-bold text-yellow-500 tracking-wider">BTC588</code>
+                                <i class="fa-regular fa-copy text-slate-500 group-hover/code:text-white transition-colors"></i>
+                            </div>
+                        </div>
+
+                        <button onclick="copyToClipboard('BTC588')" class="w-full py-3 bg-gradient-to-r from-yellow-500 to-yellow-700 rounded-lg font-bold hover:brightness-110 transition-all btn-shine shadow-lg shadow-yellow-900/50">
+                            复制并注册
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contract Fee Calculator Section -->
+    <section id="calculator" class="py-20 bg-slate-900/50 border-y border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 
-                {/* Hero Section */}
-                <div className="text-center mb-16 relative">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-medium mb-8 animate-fade-in-up">
-                    <span className="relative flex h-2 w-2">
-                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
-                      <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
-                    </span>
-                    2025年最新<span className="font-bold">加密货币</span>返佣渠道
-                  </div>
-                  
-                  <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-8">
-                    {/* H1 标签保持核心关键词：手续费、返佣 */}
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-gray-500">拒绝高额手续费</span>
-                    <br />
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">开启 80% 终身返佣交易</span>
-                  </h1>
-                  
-                  <p className="text-xl text-gray-400 max-w-2xl mx-auto mb-12 leading-relaxed">
-                    为您精选 Gate.io, Bitget, 币安等顶级<span className="font-medium text-white">交易所 VIP 渠道</span>。
-                    通过我们的<span className="text-white font-medium">邀请码注册即自动生效</span>，永久享受手续费减免，让您的合约交易更具优势。
-                  </p>
+                <!-- Calculator UI -->
+                <div class="glass-card p-8 rounded-2xl border border-cyan-500/20 shadow-[0_0_50px_rgba(34,211,238,0.05)]">
+                    <h3 class="text-xl font-bold mb-6 flex items-center gap-2">
+                        <i class="fa-solid fa-calculator text-cyan-400"></i> 合约手续费节省计算器
+                    </h3>
+                    
+                    <div class="space-y-6">
+                        <!-- Principal -->
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <label class="text-sm text-slate-400">本金投入 (USDT)</label>
+                                <span class="font-mono text-white font-bold" id="display-principal">10,000 U</span>
+                            </div>
+                            <input type="range" min="100" max="100000" step="100" value="10000" class="w-full" id="input-principal" oninput="calculateSavings()">
+                        </div>
 
-                  {/* 🔥 超级醒目的联系方式区域 🔥 */}
-                  <div className="mb-12 animate-fade-in-up delay-100 max-w-3xl mx-auto">
-                     <div className="relative group rounded-3xl p-[2px] bg-gradient-to-r from-yellow-500 via-orange-500 to-yellow-500 shadow-[0_0_40px_rgba(234,179,8,0.2)]">
-                        <div className="absolute -top-6 left-1/2 -translate-x-1/2 bg-[#050505] px-4 z-20">
-                             {/* 金色发光字体 */}
-                             <p className="whitespace-nowrap text-xl md:text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#FFD700] via-[#FFA500] to-[#FFD700] drop-shadow-[0_2px_10px_rgba(255,215,0,0.5)] flex items-center gap-2">
-                                <Zap size={24} className="text-yellow-400 fill-yellow-400 animate-pulse" />
-                                官方客服 · 一对一协助<span className="text-sm font-normal text-yellow-200 ml-1">(新用户咨询优先)</span>
-                             </p>
+                        <!-- Leverage -->
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <label class="text-sm text-slate-400">平均杠杆倍数</label>
+                                <span class="font-mono text-cyan-400 font-bold" id="display-leverage">20x</span>
+                            </div>
+                            <input type="range" min="1" max="100" step="1" value="20" class="w-full" id="input-leverage" oninput="calculateSavings()">
+                        </div>
+
+                        <!-- Frequency -->
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <label class="text-sm text-slate-400">每月开/平仓次数</label>
+                                <span class="font-mono text-white font-bold" id="display-freq">50次</span>
+                            </div>
+                            <input type="range" min="1" max="200" step="1" value="50" class="w-full" id="input-freq" oninput="calculateSavings()">
                         </div>
                         
-                        <div className="bg-[#0a0a0c] rounded-[22px] p-8 md:p-10 pt-10 relative">
-                            <ContactBar />
-                        </div>
-                     </div>
-                  </div>
-
-                  <div className="flex flex-col sm:flex-row justify-center gap-4">
-                     <a href="#list" className="px-8 py-3.5 rounded-xl bg-white text-black font-bold hover:bg-gray-200 transition-colors shadow-lg shadow-white/10 flex items-center justify-center">
-                       立即查看高返佣列表
-                       <ArrowRight size={18} className="ml-2" />
-                     </a>
-                     <a href="#compare" className="px-8 py-3.5 rounded-xl bg-gray-800 text-white font-medium border border-gray-700 hover:bg-gray-700 transition-colors flex items-center justify-center">
-                       <BarChart3 size={18} className="mr-2" />
-                       手续费节省对比
-                     </a>
-                  </div>
-                </div>
-
-                {/* 交易所卡片列表 */}
-                <div id="list" className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mb-24">
-                  {exchanges.map((exchange) => (
-                    <ExchangeCard key={exchange.id} data={exchange} />
-                  ))}
-                </div>
-
-                {/* 手续费对比 & 优势 */}
-                <div id="compare" className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-24">
-                  <div className="lg:col-span-2">
-                     <FeeTable />
-                  </div>
-                  
-                  {/* 侧边信息栏 */}
-                  <div className="flex flex-col gap-6">
-                    <div className="p-6 rounded-3xl bg-gradient-to-br from-indigo-900/20 to-purple-900/20 border border-indigo-500/20 relative overflow-hidden">
-                        <div className="absolute top-0 right-0 p-4 opacity-10">
-                            <Shield size={100} />
-                        </div>
-                        <h3 className="text-xl font-bold text-white mb-2">为什么一定要走返佣？</h3>
-                        <p className="text-gray-400 text-sm leading-relaxed mb-4">
-                            对于<span className="font-medium text-indigo-300">合约高频交易者</span>，手续费往往是最大的隐形支出。普通账户没有任何优惠，长期交易损失巨大。通过返佣，您可以将这些损失转化为利润。
-                        </p>
-                        <div className="text-3xl font-bold text-white mb-1">终身节省 80%</div>
-                        <p className="text-xs text-indigo-300">顶级 VIP <span className="font-medium">返佣比例</span>，让您赢在起跑线</p>
-                    </div>
-
-                    <div className="p-6 rounded-3xl bg-[#0f1115] border border-gray-800 flex-1 flex flex-col justify-center">
-                        <div className="flex items-center gap-4 mb-4">
-                            <div className="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center text-green-500">
-                                <Check size={20} />
+                        <!-- Result Box -->
+                        <div class="bg-slate-950 rounded-xl p-6 mt-8 border border-slate-800">
+                            <div class="grid grid-cols-2 gap-4 text-center">
+                                <div>
+                                    <p class="text-xs text-slate-500 mb-1">不使用返佣总支出</p>
+                                    <p class="text-lg font-mono text-slate-300" id="cost-original">--</p>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-slate-500 mb-1">使用 50% 返佣节省</p>
+                                    <p class="text-2xl font-mono text-green-400 font-bold" id="cost-saved">--</p>
+                                </div>
                             </div>
-                            <div className="text-sm font-medium text-gray-300">自动返现</div>
-                        </div>
-                        <div className="flex items-center gap-4 mb-4">
-                            <div className="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-500">
-                                <Check size={20} />
+                            <div class="mt-4 pt-4 border-t border-slate-900 text-center">
+                                <p class="text-sm text-slate-400">
+                                    每年预计可省下: <span class="text-green-400 font-bold text-xl" id="cost-year">--</span>
+                                </p>
                             </div>
-                            <div className="text-sm font-medium text-gray-300">每日/每小时结算</div>
                         </div>
-                        <div className="flex items-center gap-4">
-                            <div className="w-10 h-10 rounded-full bg-orange-500/20 flex items-center justify-center text-orange-500">
-                                <Check size={20} />
-                            </div>
-                            <div className="text-sm font-medium text-gray-300">官方后台可查</div>
-                        </div>
-                    </div>
-                  </div>
-                </div>
-                
-                {/* SEO 优化新增：常见问题 (FAQ) 模块 */}
-                <div className="mb-24">
-                    <FAQSection />
-                </div>
-
-
-                {/* 底部联系方式区域 (备用) */}
-                <div id="contact" className="relative p-1 rounded-3xl bg-gradient-to-r from-gray-800 to-gray-900 mb-10 opacity-80 hover:opacity-100 transition-opacity">
-                    <div className="relative rounded-[22px] bg-[#08090c] p-8 text-center overflow-hidden">
-                        <h2 className="text-2xl font-bold text-white mb-6">还有疑问？</h2>
-                        <ContactBar />
+                        <p class="text-xs text-slate-600 text-center">*基于主流交易所Taker费率0.05%估算</p>
                     </div>
                 </div>
 
-              </main>
-
-              {/* Footer */}
-              <footer className="max-w-7xl mx-auto px-4 text-center text-gray-600 text-sm py-8 border-t border-gray-900">
-                <p className="mb-2">© 2025 交易所返佣推荐. All rights reserved.</p>
-                <p className="text-xs">
-                    风险提示：加密货币交易具有极高风险，返佣比例以交易所官方实时政策为准。请在充分了解风险后进行交易。
-                </p>
-              </footer>
+                <!-- Why Text -->
+                <div>
+                    <h2 class="text-3xl font-bold mb-6">玩合约不填邀请码<br>等于在给交易所送钱</h2>
+                    <p class="text-slate-400 text-lg mb-8 leading-relaxed">
+                        在合约交易中，由于**杠杆放大**的作用，您的交易额会成倍增加。
+                        <br><br>
+                        例如：1000U本金 x 20倍杠杆 = 20,000U交易额。
+                        单次开平仓的手续费就高达 20U。
+                        <br><br>
+                        如果不使用返佣，这些钱就是纯支出。使用我们的邀请码，您可以拿回高达 **50%-80%** 的手续费，这往往决定了您最终是盈利还是亏损。
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-check-circle text-green-500"></i>
+                            <span>手续费每日/每小时自动返还</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-check-circle text-green-500"></i>
+                            <span>支持 USDT 本位和 币本位 合约</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-check-circle text-green-500"></i>
+                            <span>联系客服 sepdoi 可协助调整后台费率</span>
+                        </li>
+                    </ul>
+                </div>
             </div>
-          );
-        };
+        </div>
+    </section>
 
-        // 渲染组件
-        const container = document.getElementById('root');
-        if (container) {
-            ReactDOM.createRoot(container).render(<App />);
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 max-w-4xl mx-auto px-4 sm:px-6">
+        <h2 class="text-2xl font-bold mb-2 text-center text-white">常见问题解答</h2>
+        <p class="text-center text-slate-500 mb-10">新手入门必读指南</p>
+        
+        <div class="space-y-4">
+            <!-- FAQ Item 1 -->
+            <details class="group glass-card rounded-lg open:bg-slate-800/80 transition-colors">
+                <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-5 text-white hover:text-cyan-400 transition-colors">
+                    <span class="flex items-center gap-3"><i class="fa-regular fa-question-circle text-cyan-500"></i> 我已经注册了Gate/币安，还能填写邀请码吗？</span>
+                    <span class="transition group-open:rotate-180 text-slate-500"><i class="fa-solid fa-chevron-down"></i></span>
+                </summary>
+                <div class="text-slate-400 p-5 pt-0 leading-relaxed border-t border-slate-700/50 mt-2">
+                    <p>对于<strong>币安 (Binance)</strong>：如果不超过注册后的一定时间（通常极短），可能可以在个人中心补填，但大多数情况建议使用新邮箱重新注册账号填写 <strong>BTC588</strong>。</p>
+                    <p class="mt-2">对于<strong>Gate.io</strong>：必须在注册时填写 <strong>PPPPPTTTT</strong>，老账号无法补填。建议注销旧号或换手机号/邮箱注册新号以享受80%返佣。</p>
+                </div>
+            </details>
+
+            <!-- FAQ Item 2 -->
+            <details class="group glass-card rounded-lg open:bg-slate-800/80 transition-colors">
+                <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-5 text-white hover:text-cyan-400 transition-colors">
+                    <span class="flex items-center gap-3"><i class="fa-regular fa-question-circle text-cyan-500"></i> 返佣是自动到账的吗？多久到账？</span>
+                    <span class="transition group-open:rotate-180 text-slate-500"><i class="fa-solid fa-chevron-down"></i></span>
+                </summary>
+                <div class="text-slate-400 p-5 pt-0 leading-relaxed border-t border-slate-700/50 mt-2">
+                    是的，均为交易所系统自动返还，无需人工干预，安全透明。
+                    <ul class="list-disc ml-5 mt-2 space-y-1">
+                        <li><strong>Gate.io</strong>：通常为每小时或每日结算返还到您的现货账户。</li>
+                        <li><strong>Bitget</strong>：每日结算，自动打入账户。</li>
+                        <li><strong>币安</strong>：根据规则，通常为每小时返还一次。</li>
+                    </ul>
+                </div>
+            </details>
+            
+            <!-- FAQ Item 3 -->
+            <details class="group glass-card rounded-lg open:bg-slate-800/80 transition-colors">
+                <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-5 text-white hover:text-cyan-400 transition-colors">
+                    <span class="flex items-center gap-3"><i class="fa-regular fa-question-circle text-cyan-500"></i> 为什么联系方式里微信是待定？</span>
+                    <span class="transition group-open:rotate-180 text-slate-500"><i class="fa-solid fa-chevron-down"></i></span>
+                </summary>
+                <div class="text-slate-400 p-5 pt-0 leading-relaxed border-t border-slate-700/50 mt-2">
+                    由于微信对加密货币相关内容的风控较严，为了防止失联，我们首推使用 <strong>Telegram (@sepdoi)</strong> 或 <strong>X (@sepdoi)</strong> 进行联系。这两个渠道是加密货币圈最主流且最稳定的沟通方式。
+                </div>
+            </details>
+
+            <!-- FAQ Item 4 -->
+            <details class="group glass-card rounded-lg open:bg-slate-800/80 transition-colors">
+                <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-5 text-white hover:text-cyan-400 transition-colors">
+                    <span class="flex items-center gap-3"><i class="fa-regular fa-question-circle text-cyan-500"></i> 邀请码有有效期吗？</span>
+                    <span class="transition group-open:rotate-180 text-slate-500"><i class="fa-solid fa-chevron-down"></i></span>
+                </summary>
+                <div class="text-slate-400 p-5 pt-0 leading-relaxed border-t border-slate-700/50 mt-2">
+                    本站提供的所有邀请码（Gate: PPPPPTTTT / Bitget: BTC18188 / Binance: BTC588）均为<strong>永久有效</strong>。一旦绑定成功，您的账户将终身享受手续费减免特权，不会因为时间推移而取消。
+                </div>
+            </details>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800 bg-slate-950 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                <!-- Brand -->
+                <div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-8 h-8 rounded bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white font-bold"><i class="fa-solid fa-coins"></i></div>
+                        <span class="font-bold text-xl tracking-wider text-white">交易所<span class="text-cyan-400">返佣</span></span>
+                    </div>
+                    <p class="text-slate-500 text-sm leading-6">
+                        致力为全球华语用户提供最高的加密货币交易所返佣渠道。拒绝信息差，让每一笔交易都更省钱。
+                    </p>
+                </div>
+
+                <!-- Contact Large -->
+                <div>
+                    <h4 class="text-white font-bold mb-4">联系我们 (24h在线)</h4>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="https://t.me/sepdoi" target="_blank" class="flex items-center gap-3 text-slate-400 hover:text-brand-telegram transition-colors">
+                                <i class="fa-brands fa-telegram text-xl w-6"></i>
+                                <span>Telegram: @sepdoi</span>
+                            </a>
+                        </li>
+                        <!-- X Logo (Updated to inline SVG for reliability) -->
+                        <li>
+                            <a href="https://x.com/sepdoi" target="_blank" class="flex items-center gap-3 text-slate-400 hover:text-white transition-colors">
+                                <svg class="w-5 h-5 fill-current w-6" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.814L4.908 21.75H1.69L10.642 11.23 2.22 2.25h3.572L12 8.718l6.244-6.468z" />
+                                </svg>
+                                <span>X: @sepdoi</span>
+                            </a>
+                        </li>
+                        <li class="flex items-center gap-3 text-slate-500">
+                            <i class="fa-brands fa-weixin text-xl w-6"></i>
+                            <span>WeChat: 待定</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-white font-bold mb-4">快速导航</h4>
+                    <ul class="space-y-2 text-sm text-slate-400">
+                        <li><a href="#home" class="hover:text-cyan-400 transition-colors">返回首页</a></li>
+                        <li><a href="#exchanges" class="hover:text-cyan-400 transition-colors">Gate.io 返佣</a></li>
+                        <li><a href="#exchanges" class="hover:text-cyan-400 transition-colors">Bitget 返佣</a></li>
+                        <li><a href="#exchanges" class="hover:text-cyan-400 transition-colors">Binance 返佣</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-slate-900 pt-8 text-center text-slate-600 text-xs">
+                <p class="mb-2">© 2024 交易所返佣. All rights reserved.</p>
+                <p>风险提示：数字货币交易存在较高风险，请根据自身风险承受能力理性投资。</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Element -->
+    <div id="toast">已复制到剪贴板！</div>
+
+    <!-- Scripts -->
+    <script>
+        // 1. Calculator Logic (Futures Focused)
+        function calculateSavings() {
+            // Inputs
+            const principal = parseInt(document.getElementById('input-principal').value);
+            const leverage = parseInt(document.getElementById('input-leverage').value);
+            const freq = parseInt(document.getElementById('input-freq').value);
+
+            // Update UI Displays
+            document.getElementById('display-principal').innerText = principal.toLocaleString() + ' U';
+            document.getElementById('display-leverage').innerText = leverage + 'x';
+            document.getElementById('display-freq').innerText = freq + '次';
+
+            // Logic: 
+            // Trade Volume = Principal * Leverage
+            // Total Volume per Month = Trade Volume * Freq * 2 (Open + Close)
+            // Note: Freq is "times per month", usually implies a full trade (open+close), so *2 for fee calculation
+            
+            const singleTradeVolume = principal * leverage;
+            const totalVolume = singleTradeVolume * freq * 2; // Open and Close
+            
+            const takerRate = 0.0005; // 0.05%
+            const totalFee = totalVolume * takerRate;
+            const saved = totalFee * 0.50; // Assuming 50% rebate average
+            const yearlySaved = saved * 12;
+
+            // Render
+            document.getElementById('cost-original').innerText = '$' + Math.floor(totalFee).toLocaleString();
+            document.getElementById('cost-saved').innerText = '$' + Math.floor(saved).toLocaleString();
+            document.getElementById('cost-year').innerText = '$' + Math.floor(yearlySaved).toLocaleString();
         }
-    </script>
-    
-    <!-- SEO 结构化数据 (JSON-LD) - FAQPage Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "什么是加密货币交易所返佣？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "交易所返佣是平台将用户交易产生的手续费，以一定比例（如我们提供的 80%）返还给用户的机制。这能显著降低高频合约交易的成本，是专业交易者必备的福利。"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "你们的返佣比例为什么能达到 80%？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "我们是交易所的官方顶级合作伙伴 (VIP 代理)，拥有最高的合作等级。因此，我们能够将最高比例的手续费返还给通过我们链接注册的用户。这不是普通用户的待遇。"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "返佣是自动结算的吗？如何查看？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "是的，通过我们的专属链接注册后，返佣将自动在您的账户内生效。Gate.io 等顶级平台支持每日或每小时结算，您可以直接在交易所的返佣或邀请人后台查询您的返现记录。"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "我已经注册了普通账户，还能享受返佣吗？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "很抱歉，交易所的返佣政策通常只对新用户首次注册有效。如果您已注册，建议联系我们的客服获取解决方案，例如注册新账户或转签事宜。请务必先咨询客服。"
-          }
+
+        // Initialize Calculator
+        calculateSavings();
+
+        // 2. Particle Background Animation
+        const canvas = document.getElementById('bg-canvas');
+        const ctx = canvas.getContext('2d');
+        
+        let width, height;
+        let particles = [];
+        
+        function resize() {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
         }
-      ]
-    }
+        
+        class Particle {
+            constructor() {
+                this.x = Math.random() * width;
+                this.y = Math.random() * height;
+                this.vx = (Math.random() - 0.5) * 0.3; // Slower for elegance
+                this.vy = (Math.random() - 0.5) * 0.3;
+                this.size = Math.random() * 2;
+                this.color = Math.random() > 0.5 ? 'rgba(6, 182, 212, ' : 'rgba(59, 130, 246, '; 
+            }
+            
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+                
+                if (this.x < 0) this.x = width;
+                if (this.x > width) this.x = 0;
+                if (this.y < 0) this.y = height;
+                if (this.y > height) this.y = 0;
+            }
+            
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = this.color + Math.random() * 0.5 + ')';
+                ctx.fill();
+            }
+        }
+        
+        function initParticles() {
+            particles = [];
+            const particleCount = window.innerWidth < 768 ? 40 : 80; // Optimize for mobile
+            for (let i = 0; i < particleCount; i++) {
+                particles.push(new Particle());
+            }
+        }
+        
+        function animate() {
+            ctx.clearRect(0, 0, width, height);
+            
+            particles.forEach((p, index) => {
+                p.update();
+                p.draw();
+                
+                for (let j = index + 1; j < particles.length; j++) {
+                    const p2 = particles[j];
+                    const dx = p.x - p2.x;
+                    const dy = p.y - p2.y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+                    
+                    if (distance < 100) {
+                        ctx.beginPath();
+                        ctx.strokeStyle = `rgba(255, 255, 255, ${0.05 - distance/2000})`; // Fainter lines
+                        ctx.lineWidth = 0.5;
+                        ctx.moveTo(p.x, p.y);
+                        ctx.lineTo(p2.x, p2.y);
+                        ctx.stroke();
+                    }
+                }
+            });
+            
+            requestAnimationFrame(animate);
+        }
+        
+        window.addEventListener('resize', () => {
+            resize();
+            initParticles();
+        });
+        
+        // 3. Clipboard & Toast
+        function copyToClipboard(text) {
+            const el = document.createElement('textarea');
+            el.value = text;
+            document.body.appendChild(el);
+            el.select();
+            document.execCommand('copy');
+            document.body.removeChild(el);
+            
+            showToast(`邀请码 ${text} 已复制！`);
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById("toast");
+            toast.textContent = message;
+            toast.className = "show";
+            setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
+        }
+
+        // 4. Navbar Scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 20) {
+                nav.style.backgroundColor = 'rgba(2, 6, 23, 0.95)';
+                nav.style.boxShadow = '0 10px 30px -10px rgba(0,0,0,0.5)';
+            } else {
+                nav.style.backgroundColor = 'rgba(2, 6, 23, 0.6)';
+                nav.style.boxShadow = 'none';
+            }
+        });
+
+        // Init
+        resize();
+        initParticles();
+        animate();
     </script>
 </body>
-</html>
-<html>
-  <head>
-    <meta name="baidu-site-verification" content="codeva-ecjvE7fy4b" />
-    <title>My title</title>
-  </head>
-  <body>
-    page contents
-  </body>
 </html>
